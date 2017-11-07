@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome!!!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/scripts.js" type="text/javascript">
+    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  </head>
+  <body>
+    <div class="main-cover row">
+      <div class="left-part col-md-5" style="border-right: 2px solid #eee; height: 100vh;">
+        <div class="" style="padding: 20px;">
+          <div class="" style="text-align: center;">
+            <img src="./images/profileimg.jpg" style="width: 350px;" alt="">
+          </div>
+          <div class="" style="padding: 20px; text-align: center;">
+            <div class="" style="margin-top: 30px;">
+              <div class="">
+                Hello, My Name is
+              </div>
+              <h1>John Abraham</h1>
+              <p>I am Web Developer and Doing so and so and i am intersted in so and so who are passionate about something</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-part col-md-7" style="">
+        <div class="">
+          <div class="row" style="padding: 20px;">
+            <div class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
+              <div id="aboutTab" class="tab-underline tabs" style="padding:15px 0px;">
+                About
+              </div>
+            </div>
+            <div class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
+              <div id="projectTab" class="tabs" style="padding:15px 0px;">
+                Projects
+              </div>
+            </div>
+            <div  class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
+              <div id="techTab" class="tabs" style="padding:15px 0px;">
+                Technologies
+              </div>
+            </div>
+            <div  class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
+              <div id="expTab" class="tabs" style="padding:15px 0px;">
+                Experience
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="content-display" style="padding: 0px 20px;">
+              <div id="aboutDesc" class="tabdesc display-block" style="display:none;">
+                content display desc here to go
+              </div>
+              <div id="projectDesc"  class="tabdesc" style="display:none;">
+                project description
+              </div>
+              <div id="techDesc" class="tabdesc" style="display:none;">
+                technology desc
+              </div>
+              <div id="expDesc" class="tabdesc" style="display:none;">
+                experience desc
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
