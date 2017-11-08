@@ -1,6 +1,7 @@
 var express = require('express');
+var projectList = require('./data.js').projectList;
 // var bodyParser = require('body-parser');
-
+debugger;
 var app = express();
 
 // var urlencodedParser = bodyParser.urlencoded({extended: false});
@@ -10,9 +11,10 @@ app.set('view engine', 'ejs');
 app.use('/images', express.static('images'));
 app.use('/styles', express.static('styles'));
 app.use('/scripts', express.static('scripts'));
+app.use('/fonts', express.static('fonts'));
 
 app.get('/', (req, res)=>{
-  res.render('index');
+  res.render('index',{projectList});
 });
 // app.get('/contact', (req, res)=>{
 //   res.render('contact', {qs: req.query});
