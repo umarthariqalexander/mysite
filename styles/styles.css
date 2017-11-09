@@ -3,24 +3,26 @@
 
 @font-face{
   font-family: Circular-Book;
-  src: url('./fonts/Circular-Book.ttf');
+  src: url('./myfonts/Circular-Book.ttf');
 }
 
 @font-face{
   font-family: Circular-Light;
-  src: url('./fonts/Circular-Light.ttf');
+  src: url('./myfonts/Circular-Light.ttf');
 }
 
 @font-face{
   font-family: Circular-Black;
-  src: url('./fonts/Circular-Black.ttf');
+  src: url('./myfonts/Circular-Black.ttf');
 }
 
 @font-face{
   font-family: Circular-Medium;
-  src: url('./fonts/Circular-Medium.ttf');
+  src: url('./myfonts/Circular-Medium.ttf');
 }
-
+a{
+  color: #000;
+}
 body{
  font-family: 'Circular-Light', sans-serif;
 }
@@ -31,7 +33,7 @@ body{
 .font-circular-book{
   font-family: 'Circular-Book';
 }
-.tab-underline{
+.tabs.tab-underline{
   border-bottom: 2px solid orange;
 }
 .display-block{
@@ -217,8 +219,15 @@ body{
 .social-icons-cover{
   text-align: center;
 }
+.social-icons-cover{
+  font-size: 25px;
+
+}
 .social-icons-cover a{
       margin: 0px 5px;
+      /*color: #0084ff !important;*/
+      color: #000;
+      text-decoration: none;
 }
 .social-icons-cover img{
     width: 50px;
