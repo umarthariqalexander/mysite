@@ -3,7 +3,7 @@ var projectList = require('./data.js').projectList;
 // var bodyParser = require('body-parser');
 debugger;
 var app = express();
-
+app.set('port', (process.env.PORT || 5000));
 // var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 app.set('view engine', 'ejs');
@@ -31,4 +31,4 @@ app.get('/', (req, res)=>{
 //   res.render('profile', {person: req.params.id, data});
 // });
 
-app.listen(3000);
+// app.listen(3000);
