@@ -29,7 +29,7 @@ var sendmail = function (mailParameters) {
     subject: subject,
     html: html
   };
-
+  // Async Function
   transporter.sendMail(mailOptions, (err, info)=>{
     if(err){
       console.log(err);
@@ -38,6 +38,7 @@ var sendmail = function (mailParameters) {
       console.log('Email Sent to '+ info.response);
     }
   });
+  return true;
 };
 
 module.exports = {

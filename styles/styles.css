@@ -36,6 +36,12 @@ body{
 .display-block{
   display: block !important;
 }
+.display-inline-block{
+  display: inline-block !important;
+}
+.field-error-class{
+  border: 2px solid red;
+}
 .project-desc-cover{
   /*animation-name: bottomUp;
   animation-duration: 1s;
@@ -340,4 +346,16 @@ textarea{
   padding-bottom: 7px;
     border-radius: 10px;
     cursor: default;
+}
+.submit-success-response{
+  display: inline-block;
+  margin-left: 30px;
+  color: green;
+  display: none;
+}
+.submit-failure-response{
+  display: inline-block;
+  margin-left: 30px;
+  color: red;
+  display: none;
 }

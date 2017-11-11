@@ -22,7 +22,14 @@ app.get('/', (req, res)=>{
 });
 app.post('/sendmail', (req, res)=>{
   console.log(req.body);
-  mail.sendmail(req.body);
+  var response = mail.sendmail(req.body);
+  if(response){
+      res.end('Your message sent to Umar. Thank You for your interest!!!');
+  }
+  else{
+    res.end(response.err);
+  }
+
   // sendMail();
   // res.render('index');
 });

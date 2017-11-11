@@ -6,7 +6,7 @@
         <div class="col-md-6">
           <input type="text" id="firstName" name="firstname" value="">
           <div class="" style="font-size: 12px;">
-            First Name
+            First Name *
           </div>
         </div>
         <div class="col-md-6">
@@ -37,11 +37,20 @@
 
     </div>
     <div class="button-cover">
-      <div class="clear-btn" style="margin-right: 30px;">
+      <div class="clear-btn" style="margin-right: 30px;" onclick="clearTheForm()">
         CLEAR
       </div>
       <div class="submit-btn" onClick="fetchFieldValues()">
         SUBMIT
+      </div>
+      <div id="submitSuccess" class="submit-success-response">
+        Your Message Submit Successfully
+      </div>
+      <div id="submitFailed" class="submit-failure-response">
+        Some Error Occured
+      </div>
+      <div id="requiredFiledAlert" class="submit-failure-response">
+        Required fields cant be empty
       </div>
     </div>
   </form>
