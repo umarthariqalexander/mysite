@@ -7,7 +7,23 @@ function onChangeTab(event){
   document.getElementById(descElementId).classList.add('display-block');
 }
 
-var projectList = [{
-  header: 'Campaign Center - [React JS, Javascript (ES6), SCSS, CSS3, Babel, Webpack.]',
-  desc: 'Campaign centre is the dashboard which helps to provide single window solution for creating and monitoring the promotions in Blibli.com.'
-}];
+function fetchFieldValues(){
+    var form = document.getElementById('contactForm');
+    var fname = form.elements.firstname.value;
+    var lname = form.elements.lastname.value;
+    var subject = form.elements.subject.value;
+    var mail = form.elements.email.value;
+    var msg = form.elements.message.value;
+    var queryObj = {firstName : fname, lastName: lname, subject: subject, mail: mail, msg: msg};
+    apihit(queryObj);
+}
+
+function apihit(queryObj){
+  axios.post('/sendmail', queryObj)
+.then(function (response) {
+  console.log(response);
+})
+.catch(function (error) {
+  console.log(error);
+});
+};
