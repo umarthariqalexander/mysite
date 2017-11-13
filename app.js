@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var projectList = require('./data.js').projectList;
 var mail = require('./mail');
 var bodyParser = require('body-parser');
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true})); // to support URL-encoded bodi
 
 app.set('view engine', 'ejs');
 
-app.use('/images', express.static('images'));
+app.use('/images', express.static(path.join(__dirname,'/dist/images/')));
 app.use('/styles', express.static('styles'));
 app.use('/scripts', express.static('scripts'));
 app.use('/fonts', express.static('fonts'));
