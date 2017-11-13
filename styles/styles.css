@@ -1,21 +1,21 @@
 @font-face{
   font-family: Circular-Book;
-  src: url('./myfonts/Circular-Book.ttf');
+  src: url('./fonts/Circular-Book.ttf');
 }
 
 @font-face{
   font-family: Circular-Light;
-  src: url('./myfonts/Circular-Light.ttf');
+  src: url('./fonts/Circular-Light.ttf');
 }
 
 @font-face{
   font-family: Circular-Black;
-  src: url('./myfonts/Circular-Black.ttf');
+  src: url('./fonts/Circular-Black.ttf');
 }
 
 @font-face{
   font-family: Circular-Medium;
-  src: url('./myfonts/Circular-Medium.ttf');
+  src: url('./fonts/Circular-Medium.ttf');
 }
 a{
   color: #000;

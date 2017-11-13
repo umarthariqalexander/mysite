@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "gulp default; nodemon app.js;"
+    "start": "rimraf ./dist/; gulp imagemin; gulp fontmin; nodemon app.js;"
   },
   "author": "Umar",
   "license": "ISC",
@@ -16,8 +16,10 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "gulp": "^3.9.1",
+    "gulp-fontmin": "^0.7.4",
     "gulp-imagemin": "^3.4.0",
     "nodemailer": "^4.4.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2"
   }
 }
