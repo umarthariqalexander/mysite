@@ -1,17 +1,26 @@
 <div class="form-outer-cover">
+  <div class="mobile-header">
+    Contact Me
+  </div>
   <form id="contactForm" class="" action="./sendmail" method="post">
     <div class="" style="margin-bottom: 20px;">
       <label for="name">Name *</label>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 first-name">
+          <div id="mobile-first-name" class="" style="font-size: 12px;">
+            First Name *
+          </div>
           <input type="text" id="firstName" name="firstname" value="">
-          <div class="" style="font-size: 12px;">
+          <div id="desktop-first-name" class="" style="font-size: 12px;">
             First Name *
           </div>
         </div>
         <div class="col-md-6">
+          <div id="mobile-last-name" class="" style="font-size: 12px;">
+            Last Name
+          </div>
           <input type="text" id="lastName" name="lastname" value="">
-          <div class="" style="font-size: 12px;">
+          <div id="desktop-last-name" class="" style="font-size: 12px;">
             Last Name
           </div>
         </div>
@@ -32,7 +41,7 @@
     <div class="" style="margin-bottom: 20px;">
       <label for="message">Message *</label>
       <div class="">
-        <textarea id="message" name="message" rows="10" cols="100"></textarea>
+        <textarea id="message" name="message"></textarea>
       </div>
 
     </div>

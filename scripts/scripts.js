@@ -12,6 +12,27 @@ function onChangeTab(event){
     optionElement.classList.add('option-hide-animation');
     setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
   }
+  animateScrollDown();
+}
+function animateScrollDown(){
+  var scrollToTop = window.setInterval(function() {
+      var pos = document.getElementById('contentDisplay').offsetTop;
+      if ( pos > window.pageYOffset + 25 ) {
+          window.scrollTo( 0, window.pageYOffset + 10 );
+      } else {
+          window.clearInterval( scrollToTop );
+      }
+  }, 16);
+}
+function animateScrollup(){
+  var scrollToBottom = window.setInterval(function() {
+      var pos = document.getElementById('leftPart').offsetTop;
+      if ( pos < window.pageYOffset ) {
+          window.scrollTo( 0, window.pageYOffset - 10 );
+      } else {
+          window.clearInterval( scrollToBottom );
+      }
+  }, 16);
 }
 function clearTheForm(){
   var requiredElement = document.getElementById('requiredFiledAlert');
@@ -158,3 +179,12 @@ function hideShowMenu(){
     element.classList.add('option-animation');
   }
 }
+
+var scrollUpEvent = window.addEventListener('scroll',function(){
+    if(window.pageYOffset>350){
+      document.getElementById('scrollUpIcon').classList.add('display-inline-block');
+    }
+    if(window.pageYOffset<350){
+      document.getElementById('scrollUpIcon').classList.remove('display-inline-block');
+    }
+});

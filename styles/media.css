@@ -2,6 +2,10 @@
   .left-part{
     height: auto;
     border-right: none;
+    margin-bottom: 20px;
+  }
+  .right-part{
+    margin-bottom: 20px;
   }
   .main-cover{
     margin-right: 0px;
@@ -105,9 +109,6 @@
     width: 75px !important;
     margin-right:0px !important;
   }
-  .operating-desc-cover{
-    margin-bottom: 20px;
-  }
   .mobile-header{
     font-family: 'Circular-Book';
     font-size: 22px;
@@ -147,6 +148,38 @@
   }
   .operating-logos{
     text-align: center;
+  }
+  #message{
+    height: 10em;
+    width:21em;
+  }
+  #desktop-first-name{
+    display:none;
+  }
+  #desktop-last-name{
+    display: none;
+  }
+  .first-name{
+    margin-bottom: 10px;
+  }
+  .button-cover{
+    text-align: center;
+  }
+  .quote-written span{
+    margin-left: 165px;
+  }
+  #scrollUpIcon{
+    font-size: 35px;
+    right:10px;
+    position: fixed;
+    top: 500px;
+    display: none;
+  }
+  .submit-success-response{
+    margin-left: 0px;
+}
+  .submit-failure-response{
+    margin-left: 0px;
   }
 }
 
@@ -313,5 +346,27 @@
   }
   .version-logos img:nth-child(3){
     margin-right: 35px;
+  }
+  #message{
+    height: 10em;
+    width: 52em;
+  }
+  #mobile-first-name{
+    display:none;
+  }
+  #mobile-last-name{
+    display: none;
+  }
+  .quote-written span{
+    margin-left: 235px;
+  }
+  .submit-success-response{
+    margin-left: 30px;
+  }
+  .submit-failure-response{
+    margin-left: 30px;
+  }
+  #scrollUpIcon{
+    display: none !important;
   }
 }
