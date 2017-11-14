@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
     <title>Welcome!!!</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109518997-1"></script>
@@ -21,31 +22,31 @@
   </head>
   <body>
     <div class="main-cover row">
-      <div class="left-part col-md-4 col-sm-4 col-xs-12" style="border-right: 2px solid #eee; height: 100vh;">
+      <div class="left-part col-md-4 col-sm-12 col-xs-12" style="">
         <div class="" style="padding: 20px;">
           <div class="" style="text-align: center;">
-            <img src="./images/myImage.jpg" style="width: 300px;" alt="">
+            <img src="./images/myImage.jpg" class="profile-img" alt="">
           </div>
-          <div class="" style="padding: 20px; text-align: center;">
+          <div class="self-intro-cover" style="text-align: center;">
             <div class="" style="margin-top: 30px;">
               <div class="">
                 <span>Hello, My Name is</span>
               </div>
               <h1 style="margin-top: 5px;">Umar Thariq</h1>
-              <p>I am a Web Developer, who passionate about learning new cutting edge technologies and utilizes that to develop efficient Web Applications.</p>
+              <p class="self-desc">I am a Web Developer, who passionate about learning new cutting edge technologies and utilizes that to develop efficient Web Applications.</p>
             </div>
           </div>
           <div class="social-icons">
             <div class="social-icons-cover">
               <a href="https://www.facebook.com/umarthariq" target="_blank"><span class="icon-facebook"></span></a>
               <a href="https://www.linkedin.com/in/umarthariq" target="_blank"><span style="font-size:30px;" class="icon-linkedin2"></span></a>
-              <a href="https://github.com/umarthariqalexander" target="_blank"><span style="vertical-align:text-top;font-size:30px;" class="icon-github"></span></a>
-              <a href="mailto:umarthariq@gmail.com"><span style="font-size:35px; vertical-align:text-top;" class="icon-mail"></span></a>
+              <a href="https://github.com/umarthariqalexander" target="_blank"><span style="font-size:30px;" class="icon-github"></span></a>
+              <a href="mailto:umarthariq@gmail.com"><span style="font-size:30px;" class="icon-envelope-o"></span></a>
             </div>
           </div>
         </div>
       </div>
-      <div class="right-part col-md-8 col-sm-8 col-xs-12" style="">
+      <div class="right-part col-md-8 col-sm-12 col-xs-12" style="">
         <div class="" style="margin-bottom: 20px;">
           <div class="row" style="padding: 20px;">
             <div class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
@@ -71,7 +72,7 @@
           </div>
         </div>
         <div class="">
-          <div class="content-display" style="padding: 0px 20px;">
+          <div class="content-display">
               <div id="aboutDesc" class="tabdesc display-block" style="display:none;">
                 <% projectList.forEach((project)=>{ %>
                   <%- include("partials/projectdesc.ejs", {project}) %>

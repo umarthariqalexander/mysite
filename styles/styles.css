@@ -1,3 +1,5 @@
+@import url('media.css');
+
 @font-face{
   font-family: Circular-Book;
   src: url('./fonts/Circular-Book.ttf');
@@ -236,7 +238,6 @@ body{
     width: 50px;
 }
 .project-desc-cover{
-  margin-right: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -264,7 +265,15 @@ body{
     margin-bottom: 15px;
     margin-left: 15px;
 }
-
+/*.social-icons-cover a span::before{
+  vertical-align: text-top;
+}*/
+/*.social-icons-cover a:last-child span::before{
+  vertical-align: middle !important;
+}
+.social-icons-cover a:last-child{
+  vertical-align: bottom !important;
+}*/
 .mis-logos img{
   width: 80px;
   margin-right: 30px;

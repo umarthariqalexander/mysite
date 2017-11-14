@@ -1,0 +1,45 @@
+@media only screen and (max-width: 768px) {
+  .left-part{
+    height: auto;
+    border-right: none;
+  }
+  .main-cover{
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .content-display{
+    padding: 0px;
+  }
+  .project-desc-cover{
+    margin-right: 0px;
+  }
+  .self-intro-cover{
+    padding: 0px;
+    margin-bottom: 10px;
+  }
+  .profile-img{
+    width: 275px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .left-part{
+    height: 100vh;
+    border-right: 2px solid #eee;
+  }
+  .main-cover{
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .content-display{
+    padding: 0px 20px;
+  }
+  .project-desc-cover{
+    margin-right: 40px;
+  }
+  .self-intro-cover{
+    padding: 20px;
+  }
+  .profile-img{
+    width: 300px;
+  }
+}
