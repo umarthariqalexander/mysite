@@ -140,3 +140,15 @@ function apihit(queryObj){
   EEle.classList.add('display-inline-block');
 });
 };
+function hideShowMenu(){
+  var element = document.getElementById('optionBlock');
+  if(element.classList.contains('display-block')){
+    element.classList.remove('option-animation');
+    element.classList.add('option-hide-animation');
+    setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
+  }
+  else{
+    element.classList.add('display-block');
+    element.classList.add('option-animation');
+  }
+}

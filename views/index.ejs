@@ -22,6 +22,9 @@
   </head>
   <body>
     <div class="main-cover row">
+      <div onclick="hideShowMenu()" class="hamburger-menu-cover">
+        <span class="icon-menu"></span>
+      </div>
       <div class="left-part col-md-4 col-sm-12 col-xs-12" style="">
         <div class="" style="padding: 20px;">
           <div class="" style="text-align: center;">
@@ -47,7 +50,7 @@
         </div>
       </div>
       <div class="right-part col-md-8 col-sm-12 col-xs-12" style="">
-        <div class="" style="margin-bottom: 20px;">
+        <div id="optionBlock" class="options-cover" style="margin-bottom: 20px;">
           <div class="row" style="padding: 20px;">
             <div class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
               <div id="aboutTab" class="tab-underline tabs border-bottom-animation" style="padding:15px 0px;">

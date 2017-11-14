@@ -20,6 +20,68 @@
   .profile-img{
     width: 275px;
   }
+  .options-cover{
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    left: 0px;
+    z-index: 1;
+    margin-bottom: 20px;
+    width: 50%;
+    border-bottom-right-radius: 10px;
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    display: none;
+  }
+  .option-hide-animation{
+    animation-name: optionHideAnimation !important;
+    animation-delay: 0s !important;
+    animation-duration: 1s !important;
+  }
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes optionHideAnimation {
+      from   {left: 0px; top: 0px;}
+      to  {left: -500px; top: -500px;}
+  }
+
+  /* Standard */
+  @keyframes optionHideAnimation {
+    from   {left: 0px; top: 0px;}
+    to  {left: -500px;top: -500px;}
+  }
+  .option-animation{
+    animation-name: optionAnimation;
+    animation-delay: 0s;
+    animation-duration: 500ms;
+  }
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes optionAnimation {
+      from   {left: -500px;top: -500px;}
+      to {left: 0px; top: 0px;}
+  }
+
+  /* Standard */
+  @keyframes optionAnimation {
+    from   {left: -500px;top: -500px;}
+    to {left: 0px; top: 0px;}
+  }
+  .right-part{
+    position: inherit;
+  }
+  .options-cover > div{
+    margin-top: 20px;
+  }
+  .hamburger-menu-cover{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    z-index: 2;
+  }
+  .hamburger-menu-cover .icon-menu{
+    font-size: 30px;
+    color: grey;
+  }
 }
 @media only screen and (min-width: 768px) {
   .left-part{
