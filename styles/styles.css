@@ -117,110 +117,6 @@ body{
   to {opacity: 1;}
 }
 
-.technology-core-animation1{
-  animation-name: slideleft;
-  position: relative;
-  animation-duration: 1000ms;
-  animation-delay: 0s;
-}
-.technology-core-animation2{
-  animation-name: slideleft;
-  animation-duration: 1500ms;
-  animation-delay: 0s;
-}
-.technology-core-animation3{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-.technology-core-animation4{
-  animation-name: slideleft;
-  animation-duration: 2500ms;
-  animation-delay: 0s;
-}
-.technology-core-animation5{
-  animation-name: slideleft;
-  animation-duration: 3000ms;
-  animation-delay: 0s;
-}
-.technology-core-animation6{
-  animation-name: slideleft;
-  animation-duration: 3500ms;
-  animation-delay: 0s;
-}
-
-.mis-core-animation1{
-  animation-name: slideleft;
-  position: relative;
-  animation-duration: 1000ms;
-  animation-delay: 0s;
-}
-.mis-core-animation2{
-  animation-name: slideleft;
-  animation-duration: 1500ms;
-  animation-delay: 0s;
-}
-.mis-core-animation3{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-.mis-core-animation4{
-  animation-name: slideleft;
-  animation-duration: 2500ms;
-  animation-delay: 0s;
-}
-
-.version-core-animation1{
-  animation-name: slideleft;
-  position: relative;
-  animation-duration: 1000ms;
-  animation-delay: 0s;
-}
-.version-core-animation2{
-  animation-name: slideleft;
-  animation-duration: 1500ms;
-  animation-delay: 0s;
-}
-.version-core-animation3{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-.version-core-animation4{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-.os-core-animation1{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-.os-core-animation2{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-.os-core-animation3{
-  animation-name: slideleft;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-}
-
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes slideleft {
-    from   {right: -1000px;}
-    to {right: 0px;}
-}
-
-/* Standard */
-@keyframes slideleft {
-  from   {right: -1000px;}
-  to {right: 0px;}
-}
-
 .social-icons-cover{
   text-align: center;
 }
@@ -249,11 +145,7 @@ body{
 .technology-desc-cover{
   margin-bottom: 30px;
 }
-.technology-logos img{
-  width: 80px;
-  margin-right: 30px;
-  position: relative;
-}
+
 
 .technology-logos img:nth-child(2){
   width: 60px;
@@ -261,9 +153,8 @@ body{
 
 .technology-header{
   font-family: 'Circular-Book';
-    font-size: 17px;
-    margin-bottom: 15px;
-    margin-left: 15px;
+  font-size: 17px;
+  margin-bottom: 15px;
 }
 /*.social-icons-cover a span::before{
   vertical-align: text-top;
@@ -276,7 +167,6 @@ body{
 }*/
 .mis-logos img{
   width: 80px;
-  margin-right: 30px;
   vertical-align: top;
   position: relative;
 }
@@ -290,7 +180,6 @@ body{
 .mis-header{
   font-family: 'Circular-Book';
     font-size: 17px;
-    margin-left: 15px;
     margin-bottom: 15px;
 }
 
@@ -305,7 +194,6 @@ body{
 .version-header{
   font-family: 'Circular-Book';
     font-size: 17px;
-    margin-left: 15px;
     margin-bottom: 20px;
 }
 
@@ -317,8 +205,7 @@ body{
 .operating-header{
   font-family: 'Circular-Book';
     font-size: 17px;
-    margin-left: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .form-outer-cover input{
     width: 100%;
