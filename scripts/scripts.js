@@ -12,7 +12,9 @@ function onChangeTab(event){
     optionElement.classList.add('option-hide-animation');
     setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
   }
-  animateScrollDown();
+  if(window.screen.height < 641){
+      animateScrollDown();
+  }
 }
 function animateScrollDown(){
   var scrollToTop = window.setInterval(function() {
