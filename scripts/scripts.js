@@ -6,6 +6,12 @@ function onChangeTab(event){
   Array.from(document.getElementsByClassName('tabdesc')).forEach((item)=>{item.classList.remove('display-block')});
   document.getElementById(tabElement).classList.add('tab-underline');
   document.getElementById(descElementId).classList.add('display-block');
+  var optionElement = document.getElementById('optionBlock');
+  if(optionElement.classList.contains('display-block')){
+    optionElement.classList.remove('option-animation');
+    optionElement.classList.add('option-hide-animation');
+    setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
+  }
 }
 function clearTheForm(){
   var requiredElement = document.getElementById('requiredFiledAlert');

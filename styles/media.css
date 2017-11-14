@@ -139,6 +139,15 @@
   .mis-logos img{
     margin-right: 10px !important;
   }
+  .version-logos{
+    text-align: center;
+  }
+  .version-logos img{
+    margin-right: 10px;
+  }
+  .operating-logos{
+    text-align: center;
+  }
 }
 
 
@@ -290,7 +299,19 @@
   .operating-header{
     margin-left: 15px;
   }
-  .mis-logo img{
+  .mis-logos img{
     margin-right: 30px;
+  }
+  .version-logos img{
+    margin-right: 30px;
+  }
+  .version-logos img:first-child{
+    margin-right: 25px;
+  }
+  .version-logos img:nth-child(2){
+    margin-right: 15px;
+  }
+  .version-logos img:nth-child(3){
+    margin-right: 35px;
   }
 }
