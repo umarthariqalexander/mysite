@@ -1,17 +1,23 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
+var spdy = require('spdy');
 var projectList = require('./data.js').projectList;
 var mail = require('./mail');
 var bodyParser = require('body-parser');
 var app = express();
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+var httpsRedirect = require('express-https-redirect');
+
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 // var urlencodedParser = bodyParser.urlencoded({extended: false});
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); // to support URL-encoded bodies
+app.use('/', httpsRedirect(true));
 
 app.set('view engine', 'ejs');
+
 
 app.use('/images', express.static(path.join(__dirname,'/dist/images/')));
 app.use('/styles/fonts', express.static(path.join(__dirname,'/dist/fonts/')));
@@ -31,15 +37,18 @@ app.post('/sendmail', (req, res)=>{
   else{
     res.end(response.err);
   }
-
-  // sendMail();
-  // res.render('index');
 });
-//
-//
-// app.get('/profile/:id', (req, res)=>{
-//   var data = {age: 29, job: 'ninja', hobbies: ['eating', 'running', 'listening Songs']};
-//   res.render('profile', {person: req.params.id, data});
-// });
 
-// app.listen(3000);
+const options = {
+  key: fs.readFileSync('./server.key'),
+  cert: fs.readFileSync('./server.crt')
+};
+
+spdy
+  .createServer(options, app)
+  .listen(process.env.PORT || 3000, (err)=>{
+    if(err){
+      throw new Error(err);
+    }
+    console.log("Express server listening");
+  });
