@@ -15,7 +15,8 @@ app.set('view engine', 'ejs');
 
 app.use('/images', express.static(path.join(__dirname,'/dist/images/')));
 app.use('/styles/fonts', express.static(path.join(__dirname,'/dist/fonts/')));
-app.use('/styles', express.static('styles'));
+app.use('/styles/icomoonfonts', express.static(path.join(__dirname,'/styles/fonts/')));
+app.use('/styles', express.static(path.join(__dirname,'/dist/styles/')));
 app.use('/scripts', express.static('scripts'));
 
 app.get('/', (req, res)=>{

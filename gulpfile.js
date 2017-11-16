@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const fontmin = require('gulp-fontmin');
+const cleanCss = require('gulp-clean-css');
 
 gulp.task('imagemin', () =>
     gulp.src(__dirname+'/images/*')
@@ -13,3 +14,9 @@ gulp.task('fontmin', () =>
         .pipe(fontmin())
         .pipe(gulp.dest('dist/fonts'))
 );
+
+gulp.task('minify-css', ()=>{
+    return gulp.src(__dirname+'/styles/*.css')
+    .pipe(cleanCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/styles'));
+});
