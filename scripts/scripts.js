@@ -190,3 +190,16 @@ var scrollUpEvent = window.addEventListener('scroll',function(){
       document.getElementById('scrollUpIcon').classList.remove('display-inline-block');
     }
 });
+
+function getGreetingWish(){
+  var today =  new Date();
+  if(today.getHours() < 12 ){
+    document.getElementById('wishes').innerHTML = "Good Morning";
+  }
+  else if(today.getHours() >= 12 && today.getHours() < 16){
+    document.getElementById('wishes').innerHTML = "Good Afternoon";
+  }
+  else if(today.getHours() >= 16 && today.getHours() < 24){
+    document.getElementById('wishes').innerHTML = "Good Evening";
+  }
+}
