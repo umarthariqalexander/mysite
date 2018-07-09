@@ -19,7 +19,7 @@ var sendmail = function (mailParameters) {
     // }
     auth: {
       user: 'FromYourPersonalWebsite@gmail.com',
-      pass: 'mywebsitemail'
+      pass: 'mypersonalwebsitemailpwd'
     }
   });
 
