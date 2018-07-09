@@ -13,10 +13,6 @@ var sendmail = function (mailParameters) {
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
-    // auth: {
-    //   user: 'umarnodemail@gmail.com',
-    //   pass: 'mywebsitemail'
-    // }
     auth: {
       user: 'FromYourPersonalWebsite@gmail.com',
       pass: 'mypersonalwebsitemailpwd'
