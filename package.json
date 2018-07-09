@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "rimraf ./dist/; gulp imagemin; gulp fontmin; gulp minify-css; nodemon app.js;"
+    "start": "rimraf ./dist/ & gulp tasks & nodemon app.js;"
   },
   "author": "Umar",
   "license": "ISC",
@@ -22,5 +22,8 @@
     "nodemailer": "^4.4.0",
     "nodemon": "^1.12.1",
     "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.0.1"
   }
 }

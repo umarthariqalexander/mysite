@@ -189,7 +189,13 @@
 @media only screen and (min-width: 768px) {
   .left-part{
     height: 100vh;
-    border-right: 2px solid #eee;
+  }
+  .right-part{
+    border-left: 2px solid #eee;
+    height: 100%;
+  }
+  .hamburger-menu-cover{
+    display: none;
   }
   .main-cover{
     margin-right: -15px;
