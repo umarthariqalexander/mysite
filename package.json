@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "rimraf ./dist/ & gulp tasks & nodemon app.js;"
+    "build": "rimraf ./dist/ && webpack",
+    "development": "webpack-dev-server --hot",
+    "dev": "npm run build | npm run development"
   },
   "author": "Umar",
   "license": "ISC",
@@ -12,18 +14,28 @@
     "node": "8.2.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "css-loader": "^1.0.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "file-loader": "^1.1.11",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-fontmin": "^0.7.4",
     "gulp-imagemin": "^3.4.0",
+    "html-webpack-plugin": "^3.2.0",
     "nodemailer": "^4.4.0",
     "nodemon": "^1.12.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1"
   },
   "devDependencies": {
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
   }
 }
