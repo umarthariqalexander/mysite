@@ -18,7 +18,7 @@ import macImg from '../images/mac_os_logo_small.png';
 import linuxImg from '../images/linux_logo.png';
 
 
-export default ($scope, $location)=>{
+export default ($scope, $location, $http)=>{
     $scope.currentActiveTab = $location.path();
     $scope.projectList = data.projectList;
     var initializeContactFormValues = ()=>{
@@ -29,6 +29,9 @@ export default ($scope, $location)=>{
             subject: '',
             message: ''
         };
+        $scope.contactFormSubmitted = false;
+        $scope.contactFormSubmitFailed = false;
+        $scope.requiredFiledAlert = false;
     }
     $scope.images = {
         htmlImg,
@@ -54,37 +57,78 @@ export default ($scope, $location)=>{
     $scope.onChangeTab = (path)=>{
         $location.path(path);
         $scope.currentActiveTab = $location.path();
+        $scope.hideShowMenu();
+        if(window.screen.height < 641){
+        animateScrollDown();
+     }
     };
+    var animateScrollDown = function(){
+        var scrollToTop = window.setInterval(function() {
+            var pos = document.getElementById('contentDisplay').offsetTop;
+            if ( pos > window.pageYOffset + 25 ) {
+                window.scrollTo( 0, window.pageYOffset + 10 );
+            } else {
+                window.clearInterval( scrollToTop );
+            }
+        }, 16);
+    }
+    $scope.animateScrollup = function(){
+        var scrollToBottom = window.setInterval(function() {
+            var pos = document.getElementById('leftPart').offsetTop;
+            if ( pos < window.pageYOffset ) {
+                window.scrollTo( 0, window.pageYOffset - 10 );
+            } else {
+                window.clearInterval( scrollToBottom );
+            }
+        }, 16);
+      }
     $scope.fetchFieldValues = function(){
-    //   hideResponseElements();
-        console.log($scope.form.contactForm);
-        debugger;
         $scope.form.contactForm.$submitted = true;
         if($scope.form.contactForm.$valid){
-            console.log('form is valid');
+            $scope.requiredFiledAlert = false;
+            var queryObj = {
+                firstName : $scope.contactForm.firstName, 
+                lastName: $scope.contactForm.lastName, 
+                subject: $scope.contactForm.subject, 
+                mail: $scope.contactForm.email, 
+                msg: $scope.contactForm.message
+            };
+            apihit(queryObj);
         }
-    //   var validFname = false;
-    //   var validSubject = false;
-    //   var validMail = false;
-    //   var validMessage = false;
-    //   var queryObj = {firstName : fname, lastName: lname, subject: subject, mail: mail, msg: msg};
-    //   validFname = validateFname(fname);
-    //   validSubject = validateSubject(subject);
-    //   validMail = validateMail(mail);
-    //   validMessage = validateMessage(msg);
-    //   var requiredElement = document.getElementById('requiredFiledAlert');
-    //   if(validFname && validSubject && validMail && validMessage){
-    //     if(requiredElement.classList.contains('display-inline-block')){
-    //       requiredElement.classList.remove('display-inline-block');
-    //     }
-    //     apihit(queryObj);
-    //   }
-    //   else {
-    //     requiredElement.classList.add('display-inline-block');
-    //   }
+        else{
+            $scope.requiredFiledAlert = true;
+        }
   }
+  let apihit = function (queryObj){
+        $http({
+            url:'/api/sendmail',
+            method: "POST",
+            data: {queryObj}
+        })
+        .then(function (response) {
+            successElement.innerHTML = response.data;
+            $scope.contactFormSubmitted = true;
+            $scope.clearTheForm();
+        })
+        .catch(function (error) {
+            $scope.contactFormSubmitFailed = true;
+        });
+  };
   $scope.clearTheForm = function(){
-      $scope.form.contactForm = {};
-      initializeContactFormValues();
+        initializeContactFormValues();
+      $scope.form.contactForm.$setPristine();
+      
+  }
+  $scope.hideShowMenu = function (){
+    var element = document.getElementById('optionBlock');
+    if(element.classList.contains('display-block')){
+      element.classList.remove('option-animation');
+      element.classList.add('option-hide-animation');
+      setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
+    }
+    else{
+      element.classList.add('display-block');
+      element.classList.add('option-animation');
+    }
   }
 }

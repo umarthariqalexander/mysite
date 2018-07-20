@@ -51,14 +51,14 @@
       <div class="submit-btn" ng-click="fetchFieldValues()">
         SUBMIT
       </div>
-      <div id="submitSuccess" class="submit-success-response">
+      <div ng-show="contactFormSubmitted" class="submit-success-response">
         Your Message Submit Successfully
       </div>
-      <div id="submitFailed" class="submit-failure-response">
-        Some Error Occured
+      <div ng-show="contactFormSubmitFailed" class="submit-failure-response">
+        Error occured while submitting. Please Try again later!!!
       </div>
-      <div id="requiredFiledAlert" class="submit-failure-response">
-        Required fields cant be empty
+      <div ng-show="requiredFiledAlert" class="submit-failure-response">
+        * Required fields cant be empty
       </div>
     </div>
   </form>

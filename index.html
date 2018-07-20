@@ -20,7 +20,7 @@
   </head>
   <body>
     <div ng-app="myApp" ng-controller="mainCtrl" class="main-cover row">
-          <div onclick="hideShowMenu()" class="hamburger-menu-cover">
+          <div ng-click="hideShowMenu()" class="hamburger-menu-cover">
             <span class="icon-menu"></span>
           </div>
         <div id="leftPart" style="visibility: hidden;" class="left-part col-md-4 col-sm-12 col-xs-12" style="">
@@ -93,7 +93,7 @@
               </div>
             </div>
         </div>
-        <div id="scrollUpIcon" onclick="animateScrollup()">
+        <div id="scrollUpIcon" ng-click="animateScrollup()">
           <span class="icon-circle-up"></span>
         </div>
     </div>
