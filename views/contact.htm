@@ -4,46 +4,45 @@
   </div>
   <form name="form.contactForm" action="./api/sendmail" method="post">
     <div class="" style="margin-bottom: 20px;">
-      <label for="name">Name *</label>
+      <label for="name">Name</label>
       <div class="row">
         <div class="col-md-6 first-name">
           <div id="mobile-first-name" class="" style="font-size: 12px;">
             First Name *
           </div>
-          <input type="text" id="firstName" name="firstname" ng-model="contactForm.firstName" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.firstname.$invalid}" required>
           <div id="desktop-first-name" class="" style="font-size: 12px;">
             First Name *
           </div>
+          <input type="text" id="firstName" name="firstname" ng-model="contactForm.firstName" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.firstname.$invalid}" required>
         </div>
         <div class="col-md-6">
           <div id="mobile-last-name" class="" style="font-size: 12px;">
             Last Name
           </div>
-          <input type="text" id="lastName" name="lastname" ng-model="contactForm.lastName" required>
           <div id="desktop-last-name" class="" style="font-size: 12px;">
             Last Name
           </div>
+          <input type="text" id="lastName" name="lastname" ng-model="contactForm.lastName">
         </div>
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
       <label for="">Email Address *</label>
       <div class="">
-        <input id="email" type="email" name="email" ng-model="contactForm.email" required>
+        <input id="email" type="email" name="email" ng-model="contactForm.email" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.email.$invalid}" required>
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
       <label for="subject">Subject *</label>
       <div class="">
-        <input id="subject" type="text" name="subject" ng-model="contactForm.subject" required>
+        <input id="subject" type="text" name="subject" ng-model="contactForm.subject" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.subject.$invalid}" required>
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
       <label for="message">Message *</label>
       <div class="">
-        <textarea id="message" name="message" ng-model="contactForm.message" required></textarea>
+        <textarea id="message" name="message" ng-model="contactForm.message" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.message.$invalid}" required></textarea>
       </div>
-
     </div>
     <div class="button-cover">
       <div class="clear-btn" style="margin-right: 30px;" ng-click="clearTheForm()">
