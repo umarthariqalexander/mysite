@@ -42,7 +42,10 @@ body{
 .display-inline-block{
   display: inline-block !important;
 }
-.field-error-class{
+input.ng-dirty.ng-invalid{
+  border: 2px solid red !important;
+}
+.input-error-border-class{
   border: 2px solid red !important;
 }
 .project-desc-cover{

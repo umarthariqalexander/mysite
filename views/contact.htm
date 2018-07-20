@@ -2,7 +2,7 @@
   <div class="mobile-header">
     Contact Me
   </div>
-  <form id="contactForm" class="" action="./sendmail" method="post">
+  <form name="form.contactForm" action="./api/sendmail" method="post">
     <div class="" style="margin-bottom: 20px;">
       <label for="name">Name *</label>
       <div class="row">
@@ -10,7 +10,7 @@
           <div id="mobile-first-name" class="" style="font-size: 12px;">
             First Name *
           </div>
-          <input type="text" id="firstName" name="firstname" value="">
+          <input type="text" id="firstName" name="firstname" ng-model="contactForm.firstName" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.firstname.$invalid}" required>
           <div id="desktop-first-name" class="" style="font-size: 12px;">
             First Name *
           </div>
@@ -19,7 +19,7 @@
           <div id="mobile-last-name" class="" style="font-size: 12px;">
             Last Name
           </div>
-          <input type="text" id="lastName" name="lastname" value="">
+          <input type="text" id="lastName" name="lastname" ng-model="contactForm.lastName" required>
           <div id="desktop-last-name" class="" style="font-size: 12px;">
             Last Name
           </div>
@@ -29,27 +29,27 @@
     <div class="" style="margin-bottom: 20px;">
       <label for="">Email Address *</label>
       <div class="">
-        <input id="email" type="email" name="email" value="">
+        <input id="email" type="email" name="email" ng-model="contactForm.email" required>
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
       <label for="subject">Subject *</label>
       <div class="">
-        <input id="subject" type="text" name="subject" value="">
+        <input id="subject" type="text" name="subject" ng-model="contactForm.subject" required>
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
       <label for="message">Message *</label>
       <div class="">
-        <textarea id="message" name="message"></textarea>
+        <textarea id="message" name="message" ng-model="contactForm.message" required></textarea>
       </div>
 
     </div>
     <div class="button-cover">
-      <div class="clear-btn" style="margin-right: 30px;" onclick="clearTheForm()">
+      <div class="clear-btn" style="margin-right: 30px;" ng-click="clearTheForm()">
         CLEAR
       </div>
-      <div class="submit-btn" onClick="fetchFieldValues()">
+      <div class="submit-btn" ng-click="fetchFieldValues()">
         SUBMIT
       </div>
       <div id="submitSuccess" class="submit-success-response">

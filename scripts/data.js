@@ -45,4 +45,4 @@ var projectList = [{
 
 
 
-module.exports = {projectList: projectList};
+module.exports = {projectList};

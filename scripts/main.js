@@ -1,25 +1,45 @@
 import axios from 'axios';
 import {projectList} from './data.js';
 import '../styles/main.scss';
+import mainCtrl from './mainController.js';
 
-function onChangeTab(event){
-    var tabElement = event.target.id;
-    var descElementId = tabElement.replace('Tab', 'Desc');
-    hideResponseElements();
-    Array.from(document.getElementsByClassName('tabs')).forEach((item)=>{item.classList.remove('tab-underline')});
-    Array.from(document.getElementsByClassName('tabdesc')).forEach((item)=>{item.classList.remove('display-block')});
-    document.getElementById(tabElement).classList.add('tab-underline');
-    document.getElementById(descElementId).classList.add('display-block');
-    var optionElement = document.getElementById('optionBlock');
-    if(optionElement.classList.contains('display-block')){
-      optionElement.classList.remove('option-animation');
-      optionElement.classList.add('option-hide-animation');
-      setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
-    }
-    if(window.screen.height < 641){
-        animateScrollDown();
-    }
-  }
+var app = angular.module('myApp', ["ngRoute"]);
+app.controller('mainCtrl', mainCtrl);
+
+app.config(function($routeProvider){
+  $routeProvider
+  .when("/", {
+    templateUrl: "./views/projectdesc.htm"
+  })
+  .when("/tech", {
+    templateUrl: "./views/technologydesc.htm"
+  })
+  .when("/about", {
+    templateUrl: "./views/about.htm"
+  })
+  .when("/contact", {
+    templateUrl: "./views/contact.htm"
+  })
+});
+
+// function onChangeTab(event){
+//     var tabElement = event.target.id;
+//     var descElementId = tabElement.replace('Tab', 'Desc');
+//     hideResponseElements();
+//     Array.from(document.getElementsByClassName('tabs')).forEach((item)=>{item.classList.remove('tab-underline')});
+//     Array.from(document.getElementsByClassName('tabdesc')).forEach((item)=>{item.classList.remove('display-block')});
+//     document.getElementById(tabElement).classList.add('tab-underline');
+//     document.getElementById(descElementId).classList.add('display-block');
+//     var optionElement = document.getElementById('optionBlock');
+//     if(optionElement.classList.contains('display-block')){
+//       optionElement.classList.remove('option-animation');
+//       optionElement.classList.add('option-hide-animation');
+//       setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
+//     }
+//     // if(window.screen.height < 641){
+//     //     animateScrollDown();
+//     // }
+//   }
   function animateScrollDown(){
     var scrollToTop = window.setInterval(function() {
         var pos = document.getElementById('contentDisplay').offsetTop;

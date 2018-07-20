@@ -8,25 +8,22 @@
     <meta name="description" content="Personal Website about umarthariq who is passionate on Web development. Umar is from Dindigul, Tamilnadu. Umar Thariq finished M.Tech Software Engineering in VIT University. Currently Umar Thariq working as a UI Developer in Bangalore">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109518997-1"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.js"></script>
     <script>
       // window.dataLayer = window.dataLayer || [];
       // function gtag(){dataLayer.push(arguments);}
       // gtag('js', new Date());
-
       // gtag('config', 'UA-109518997-1');
     </script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/iconStyles.css"> -->
-    </script>
+
   </head>
   <body>
-    <div class="main-cover row">
+    <div ng-app="myApp" ng-controller="mainCtrl" class="main-cover row">
           <div onclick="hideShowMenu()" class="hamburger-menu-cover">
             <span class="icon-menu"></span>
           </div>
-        <div id="leftPart" class="left-part col-md-4 col-sm-12 col-xs-12" style="">
+        <div id="leftPart" style="visibility: hidden;" class="left-part col-md-4 col-sm-12 col-xs-12" style="">
             <div class="" style="padding: 20px;">
               <div class="" style="text-align: center;">
                 <img class="profile-img" alt="">
@@ -50,26 +47,26 @@
                 </div>
               </div>
         </div>
-        <div class="right-part col-md-8 col-sm-12 col-xs-12" style="">
+        <div class="right-part col-md-8 col-sm-12 col-xs-12">
             <div id="optionBlock" class="options-cover" style="margin-bottom: 20px;">
               <div class="row" style="padding: 20px;">
-                <div class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
-                  <div id="aboutTab" class="tab-underline tabs border-bottom-animation" style="padding:15px 0px;">
+                <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/')">
+                  <div id="aboutTab" class="tabs border-bottom-animation" ng-class="{'tab-underline': currentActiveTab === '/'}" style="padding:15px 0px;">
                     Projects
                   </div>
                 </div>
-                <div class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
-                  <div id="projectTab" class="tabs" style="padding:15px 0px;">
+                <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/tech')">
+                  <div id="projectTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/tech'}">
                     Technologies
                   </div>
                 </div>
-                <div  class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
-                  <div id="techTab" class="tabs" style="padding:15px 0px;">
+                <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/about')">
+                  <div id="techTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/about'}">
                     About Me
                   </div>
                 </div>
-                <div  class="col-md-3" style="text-align: center; cursor: default;" onclick="onChangeTab(event)">
-                  <div id="expTab" class="tabs" style="padding:15px 0px;">
+                <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/contact')">
+                  <div id="expTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/contact'}">
                     Contact Me
                   </div>
                 </div>
@@ -77,7 +74,7 @@
             </div>
             <div class="">
               <div id="contentDisplay" class="content-display">
-                  <div id="aboutDesc" class="tabdesc display-block" style="display:none;">
+                  <!-- <div id="aboutDesc" class="tabdesc display-block" style="display:none;">
                     <div class="mobile-header">
                       Projects
                     </div>
@@ -91,7 +88,8 @@
                   </div>
                   <div id="expDesc" class="tabdesc" style="display:none;">
                    
-                  </div>
+                  </div> -->
+                  <ng-view></ng-view>
               </div>
             </div>
         </div>
