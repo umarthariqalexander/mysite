@@ -22,8 +22,15 @@
     margin-bottom: 10px;
   }
   .profile-img{
+    padding-right: 25px;
     width: 275px;
     content: url("../images/myImage.jpg");
+  }
+  .project-header{
+    font-size: 15px;
+  }
+  .project-body{
+    font-size: 14px;
   }
   .options-cover{
     margin-bottom: 20px;
@@ -112,7 +119,7 @@
   }
   .mobile-header{
     font-family: 'Circular-Book';
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 12px;
     text-align: center;
     border: 2px solid #eee;
@@ -152,7 +159,7 @@
   }
   #message{
     height: 10em;
-    width:21em;
+    width:16.5em;
   }
   #desktop-first-name{
     display:none;
@@ -182,14 +189,41 @@
   .submit-failure-response{
     margin-left: 0px;
   }
+  .about-wish-header{
+    font-size: 14px;
+  }
+  .about-content{
+    font-size: 14px;
+  }
+  .quote-written span {
+    margin-left: 140px;
+  }
+  .self-desc{
+    margin-bottom: 25px !important;
+  }
 }
 
 
 
 
 @media only screen and (min-width: 768px) {
+  .self-desc{
+    margin-bottom: 0 !important;
+  }
   .left-part{
     height: 100vh;
+  }
+  .project-header{
+    font-size: 17px;
+  }
+  .project-body{
+    font-size: 15px;
+  }
+  .about-wish-header{
+    font-size: 1em;
+  }
+  .about-content{
+    font-size: 1em;
   }
   .right-part{
     border-left: 2px solid #eee;

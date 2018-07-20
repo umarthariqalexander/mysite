@@ -143,6 +143,8 @@ input.ng-dirty.ng-invalid{
       /*color: #0084ff !important;*/
       color: #000;
       text-decoration: none;
+      vertical-align: text-bottom;
+
 }
 .social-icons-cover img{
     width: 50px;
@@ -153,7 +155,6 @@ input.ng-dirty.ng-invalid{
 }
 .project-header{
   font-family: Circular-Book;
-  font-size: 17px;
   margin-bottom: 5px;
 }
 .technology-desc-cover{

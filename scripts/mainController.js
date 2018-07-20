@@ -19,8 +19,9 @@ import linuxImg from '../images/linux_logo.png';
 
 
 export default ($scope, $location, $http)=>{
-    $scope.currentActiveTab = $location.path();
+    $scope.currentActiveTab = $location.path() || '/';
     $scope.projectList = data.projectList;
+    $scope.contactFormSubmitted = false;
     var initializeContactFormValues = ()=>{
         $scope.contactForm = {
             firstName: '',
@@ -29,7 +30,6 @@ export default ($scope, $location, $http)=>{
             subject: '',
             message: ''
         };
-        $scope.contactFormSubmitted = false;
         $scope.contactFormSubmitFailed = false;
         $scope.requiredFiledAlert = false;
     }
@@ -84,6 +84,7 @@ export default ($scope, $location, $http)=>{
       }
     $scope.fetchFieldValues = function(){
         $scope.form.contactForm.$submitted = true;
+        $scope.contactFormSubmitted = false;
         if($scope.form.contactForm.$valid){
             $scope.requiredFiledAlert = false;
             var queryObj = {
@@ -106,11 +107,10 @@ export default ($scope, $location, $http)=>{
             data: {queryObj}
         })
         .then(function (response) {
-            successElement.innerHTML = response.data;
             $scope.contactFormSubmitted = true;
             $scope.clearTheForm();
-        })
-        .catch(function (error) {
+        }, 
+        function (error) {
             $scope.contactFormSubmitFailed = true;
         });
   };
