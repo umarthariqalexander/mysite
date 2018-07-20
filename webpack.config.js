@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+console.log(path.resolve(__dirname, 'images/'));
 module.exports = {
     entry: './scripts/main.js',
     output: {
@@ -12,6 +14,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(png|jpg|gif)$/,
+                include: path.resolve(__dirname, 'images/'),
                 use:[
                     {
                         loader: 'url-loader',
@@ -52,7 +55,14 @@ module.exports = {
             filename: 'index.html',
             template: 'index.html',
             inject: 'head'
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+              from: './views/',
+              to: './views/[name].[ext]',
+              toType: 'template'
+            }
+          ])
     ],
     devServer: {
         hot: true,

@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-// var projectList = require('./data.js').projectList;
 var mail = require('./mail');
 var bodyParser = require('body-parser');
 var app = express();
@@ -23,16 +22,16 @@ app.get('/', (req, res)=>{
   res.sendFile('index.html');
 });
 
-app.post('/api/sendmail', (req, res)=>{
-  console.log(req.body);
-  var response = mail.sendmail(req.body);
-  if(response){
-      res.end('Your message sent to Umar. Thank You for your interest!!!');
-  }
-  else{
-    res.end(response.err);
-  }
+// app.post('/api/sendmail', (req, res)=>{
+//   console.log(req.body);
+//   var response = mail.sendmail(req.body);
+//   if(response){
+//       res.end('Your message sent to Umar. Thank You for your interest!!!');
+//   }
+//   else{
+//     res.end(response.err);
+//   }
 
-  // sendMail();
-  // res.render('index');
-});
+//   // sendMail();
+//   // res.render('index');
+// });
