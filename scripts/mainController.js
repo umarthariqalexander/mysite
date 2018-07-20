@@ -58,7 +58,7 @@ export default ($scope, $location, $http)=>{
         $location.path(path);
         $scope.currentActiveTab = $location.path();
         $scope.hideShowMenu();
-        if(window.screen.height < 641){
+        if(window.screen.height < 767){
         animateScrollDown();
      }
     };
