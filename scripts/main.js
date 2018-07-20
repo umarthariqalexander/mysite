@@ -4,7 +4,7 @@ import '../styles/main.scss';
 import mainCtrl from './mainController.js';
 
 var app = angular.module('myApp', ["ngRoute"]);
-app.controller('mainCtrl', mainCtrl);
+app.controller('mainCtrl', ['$scope', '$location', '$http', mainCtrl]);
 
 app.config(function($routeProvider){
   $routeProvider

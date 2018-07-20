@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+var ImageminPlugin = require('imagemin-webpack-plugin').default;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-console.log(path.resolve(__dirname, 'images/'));
 module.exports = {
     entry: './scripts/main.js',
     output: {
@@ -62,8 +63,14 @@ module.exports = {
               to: './views/[name].[ext]',
               toType: 'template'
             }
-          ])
+          ]),
+          new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
     ],
+    optimization: {
+        minimizer: [
+          new UglifyJsPlugin({ test: /\.js($|\?)/i })
+        ]
+    },
     devServer: {
         hot: true,
         port: 9000,
