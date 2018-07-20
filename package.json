@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf ./dist/ && webpack",
     "development": "webpack-dev-server --hot",
-    "dev": "npm run build | npm run development"
+    "dev": "npm run build | npm run development",
+    "start": "npm run build && node app.js"
   },
   "author": "Umar",
   "license": "ISC",
