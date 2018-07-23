@@ -1,16 +1,26 @@
 const path = require('path');
+const webpack = require('webpack');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 var ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+
+const extractPlugin = new ExtractTextPlugin({
+    filename: 'bundle.css',
+    disable: false,
+    allChunks: true
+});
+
 module.exports = {
-    entry: './scripts/main.js',
+    entry: './scripts/',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    mode: 'development',
+    devtool: 'cheap-module-source-map',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -36,22 +46,29 @@ module.exports = {
                 }]
             },
             {
-            test: /\.(s*)css$/,
-            use: ['style-loader', 'css-loader', 'sass-loader'] //chaining loaders // reverse order
-            }
-            // {
-            //     test: /\.js$/,
-            //     exclude: /(node_modules)/,
-            //     use: {
-            //       loader: 'babel-loader',
-            //       options: {
-            //         presets: ['env']
-            //       }
-            //     }
-            // }  
+            test: /\.(s*)css$/,            
+            use: extractPlugin.extract({
+                    use: ['css-loader', 'sass-loader'],
+                    fallback: 'style-loader'
+                })
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['env']
+                  }
+                }
+            }  
         ]
     },
     plugins: [
+        extractPlugin,
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
@@ -67,9 +84,10 @@ module.exports = {
           new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
     ],
     optimization: {
-        minimizer: [
-          new UglifyJsPlugin({ test: /\.js($|\?)/i })
-        ]
+        minimize: true,
+        minimizer: [new UglifyJsPlugin({
+            include: /\.js$/
+     })]
     },
     devServer: {
         hot: true,
