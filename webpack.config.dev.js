@@ -19,7 +19,8 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    mode: 'production',
+    devtool: 'cheap-module-source-map',
+    mode: 'development',
     module: {
         rules: [
             {
@@ -65,9 +66,6 @@ module.exports = {
     },
     plugins: [
         extractPlugin,
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"production"'
-        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
@@ -79,13 +77,19 @@ module.exports = {
               to: './views/[name].[ext]',
               toType: 'template'
             }
-          ]),
-          new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+          ])
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [new UglifyJsPlugin({
-            include: /\.js$/
-     })]
+    devServer: {
+        hot: true,
+        port: 9000,
+        // proxy: {
+        //     '/': {
+        //         target: 'http://localhost:3000/',
+        //         secure: false,
+        //         // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
+        //         prependPath: false
+        //     }
+        // },
+        // publicPath: 'http://localhost:9000/'
     }
 };

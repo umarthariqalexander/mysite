@@ -4,10 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "rimraf ./dist/ && webpack",
-    "development": "webpack-dev-server --hot",
-    "dev": "npm run build | npm run development",
-    "start": "npm run build && node app.js"
+    "prodBuild": "rimraf ./dist/ && webpack --config webpack.config.js",
+    "dev": "webpack-dev-server -d --config webpack.config.dev.js --hot --inline --progress --colors",
+    "start": "npm run prodBuild && node app.js"
   },
   "author": "Umar",
   "license": "ISC",
