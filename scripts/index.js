@@ -22,12 +22,12 @@ app.config(['$routeProvider', function($routeProvider){
 }]);
 
   
-var scrollUpEvent = window.addEventListener('scroll',function(){
-    if(window.pageYOffset>350){
-      document.getElementById('scrollUpIcon').classList.add('display-inline-block');
-    }
-    if(window.pageYOffset<350){
-      document.getElementById('scrollUpIcon').classList.remove('display-inline-block');
-    }
-});
+// var scrollUpEvent = window.addEventListener('scroll',function(){
+//     if(window.pageYOffset>350){
+//       document.getElementById('scrollUpIcon').classList.add('display-inline-block');
+//     }
+//     if(window.pageYOffset<350){
+//       document.getElementById('scrollUpIcon').classList.remove('display-inline-block');
+//     }
+// });
   
