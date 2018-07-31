@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "prodBuild": "rimraf ./dist/ && webpack --config webpack.config.js",
+    "prodBuild": "rimraf ./dist/ && webpack --env.production --config webpack.config.js",
     "dev": "webpack-dev-server -d --config webpack.config.dev.js --hot --inline --progress --colors",
     "start": "npm run prodBuild && node app.js"
   },
