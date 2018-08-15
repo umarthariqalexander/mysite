@@ -8,15 +8,27 @@
     <meta name="description" content="Personal Website about umarthariq who is passionate on Web development. Umar is from Dindigul, Tamilnadu. Umar Thariq finished M.Tech Software Engineering in VIT University. Currently Umar Thariq working as a UI Developer in Bangalore">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109518997-1"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.js"></script>
+
+    <!-- CDN references -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.js"></script> -->
+    
+    <!-- Local library references  -->
+    <script type="text/javascript" src="./scripts/angular.min.js"></script>
+    <script src="./scripts/angular-route.js"></script>
+    
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-109518997-1');
     </script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"></link>
+    <!-- CDN references -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"></link> -->
+
+    <!-- Local references -->
+    <!-- <link rel="stylesheet" type="text/scss" href="./styles/bootstrap.min.scss" /> -->
     <link rel="stylesheet" href="./bundle.css"/>
   </head>
   <body>
@@ -24,7 +36,7 @@
           <div ng-click="hideShowMenu()" class="hamburger-menu-cover">
             <span class="icon-menu"></span>
           </div>
-        <div id="leftPart" class="left-part col-md-4 col-sm-12 col-xs-12" style="">
+        <div id="leftPart" class="left-part col-md-4 col-sm-12 col-xs-12">
             <div class="" style="padding: 20px;">
               <div class="" style="text-align: center;">
                 <img class="profile-img" alt="">
@@ -75,28 +87,10 @@
             </div>
             <div class="">
               <div id="contentDisplay" class="content-display">
-                  <!-- <div id="aboutDesc" class="tabdesc display-block" style="display:none;">
-                    <div class="mobile-header">
-                      Projects
-                    </div>
-                    
-                  </div>
-                  <div id="projectDesc"  class="tabdesc" style="display:none;">
-                   
-                  </div>
-                  <div id="techDesc" class="tabdesc" style="display:none;">
-                    
-                  </div>
-                  <div id="expDesc" class="tabdesc" style="display:none;">
-                   
-                  </div> -->
                   <ng-view></ng-view>
               </div>
             </div>
         </div>
-        <!-- <div id="scrollUpIcon" ng-click="animateScrollup()">
-          <span class="icon-circle-up"></span>
-        </div> -->
     </div>
   </body>
 </html>
