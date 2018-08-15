@@ -13,6 +13,7 @@
   }
   .content-display{
     padding: 0px;
+    word-spacing: 0.3px;
   }
   .project-desc-cover{
     margin-right: 0px;
@@ -188,12 +189,6 @@
   .submit-failure-response{
     margin-left: 0px;
   }
-  .about-wish-header{
-    font-size: 14px;
-  }
-  .about-content{
-    font-size: 14px;
-  }
   .quote-written span {
     margin-left: 140px;
   }
@@ -206,14 +201,24 @@
 
 
 @media only screen and (min-width: 768px) {
+  .button-cover{
+    text-align: center;
+    font-size: 14px;
+  }
   .self-desc{
     margin-bottom: 0 !important;
+  }
+  .label-font-size{
+    font-size: 15px;
+  }
+  .about-desc-cover{
+    font-size: 15px;
   }
   .left-part{
     height: 100vh;
   }
   .project-header{
-    font-size: 17px;
+    font-size: 16px;
   }
   .project-body{
     font-size: 15px;
@@ -238,6 +243,8 @@
   }
   .content-display{
     padding: 0px 20px;
+    padding-left: 34px;
+    word-spacing: 0.3px;
   }
   .project-desc-cover{
     margin-right: 40px;
@@ -391,7 +398,7 @@
   }
   #message{
     height: 10em;
-    width: 45em;
+    width: 100%;
   }
   #mobile-first-name{
     display:none;

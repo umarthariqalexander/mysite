@@ -4,7 +4,7 @@
   </div>
   <form name="form.contactForm" action="./api/sendmail" method="post">
     <div class="" style="margin-bottom: 20px;">
-      <label for="name">Name</label>
+      <label for="name" class="label-font-size">Name</label>
       <div class="row">
         <div class="col-md-6 first-name">
           <div id="mobile-first-name" class="" style="font-size: 12px;">
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
-      <label for="">Email Address *</label>
+      <label class="label-font-size" for="">Email Address *</label>
       <div class="">
         <input id="email" type="email" name="email" ng-model="contactForm.email" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.email.$invalid}" required>
       </div>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="" style="margin-bottom: 20px;">
-      <label for="message">Message *</label>
+      <label class="label-font-size" for="message">Message *</label>
       <div class="">
         <textarea id="message" name="message" ng-model="contactForm.message" ng-class="{'input-error-border-class': form.contactForm.$submitted && form.contactForm.message.$invalid}" required></textarea>
       </div>
