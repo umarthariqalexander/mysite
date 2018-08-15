@@ -33,64 +33,69 @@
   </head>
   <body>
     <div ng-app="myApp" ng-controller="mainCtrl" class="main-cover row">
-          <div ng-click="hideShowMenu()" class="hamburger-menu-cover">
-            <span class="icon-menu"></span>
+        <div ng-click="hideShowMenu()" class="hamburger-menu-cover">
+          <span class="icon-menu"></span>
+        </div>
+        <div class="left-part col-md-9 col-sm-12 col-xs-12">
+          <div id="optionBlock" class="options-cover" style="margin-bottom: 20px;">
+            <div class="row" style="padding: 20px;">
+              <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/articals')">
+                <div id="techTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/articals'}">
+                  Articals
+                </div>
+              </div>
+              <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/')">
+                <div id="aboutTab" class="tabs border-bottom-animation" ng-class="{'tab-underline': currentActiveTab === '/'}" style="padding:15px 0px;">
+                  Projects
+                </div>
+              </div>
+              <!-- <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/tech')">
+                <div id="projectTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/tech'}">
+                  Technologies
+                </div>
+              </div> -->
+              <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/about')">
+                <div id="techTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/about'}">
+                  About Me
+                </div>
+              </div>
+              <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/contact')">
+                <div id="expTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/contact'}">
+                  Contact Me
+                </div>
+              </div>
+            </div>
           </div>
-        <div id="leftPart" class="left-part col-md-4 col-sm-12 col-xs-12">
-            <div class="" style="padding: 20px;">
-              <div class="" style="text-align: center;">
-                <img class="profile-img" alt="">
+          <div class="">
+            <div id="contentDisplay" class="content-display">
+                <ng-view></ng-view>
+            </div>
+          </div>
+      </div>
+      <div id="rightPart" class="right-part col-md-3 col-sm-12 col-xs-12">
+          <div class="" style="padding: 20px 0;">
+            <div class="" style="text-align: center;">
+              <img class="profile-img" alt="">
+            </div>
+            <div class="self-intro-cover" style="text-align: center;">
+              <div class="" style="margin-top: 30px;">
+                <div class="">
+                  <span>Hello, My Name is</span>
+                </div>
+                <h2 style="margin-top: 5px;">Umar Thariq</h2>
+                <p class="self-desc" style="font-size: 14px; padding: 0 5px;">I am a Web Developer, who passionate about learning new cutting edge technologies and utilizes that to develop efficient Web Applications.</p>
               </div>
-              <div class="self-intro-cover" style="text-align: center;">
-                <div class="" style="margin-top: 30px;">
-                  <div class="">
-                    <span>Hello, My Name is</span>
-                  </div>
-                  <h1 style="margin-top: 5px;">Umar Thariq</h1>
-                  <p class="self-desc" style="font-size: 14px;">I am a Web Developer, who passionate about learning new cutting edge technologies and utilizes that to develop efficient Web Applications.</p>
-                </div>
-              </div>
-              <div class="social-icons">
-                  <div class="social-icons-cover">
-                    <a href="https://www.facebook.com/umarthariq" target="_blank"><span class="icon-facebook"></span></a>
-                    <a href="https://www.linkedin.com/in/umarthariq" target="_blank"><span style="font-size:30px;" class="icon-linkedin2"></span></a>
-                    <a href="https://github.com/umarthariqalexander" target="_blank"><span style="font-size:30px;" class="icon-github"></span></a>
-                    <a href="mailto:umarthariq@gmail.com"><span style="font-size:30px;" class="icon-envelope-o"></span></a>
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="right-part col-md-8 col-sm-12 col-xs-12">
-            <div id="optionBlock" class="options-cover" style="margin-bottom: 20px;">
-              <div class="row" style="padding: 20px;">
-                <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/')">
-                  <div id="aboutTab" class="tabs border-bottom-animation" ng-class="{'tab-underline': currentActiveTab === '/'}" style="padding:15px 0px;">
-                    Projects
-                  </div>
-                </div>
-                <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/tech')">
-                  <div id="projectTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/tech'}">
-                    Technologies
-                  </div>
-                </div>
-                <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/about')">
-                  <div id="techTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/about'}">
-                    About Me
-                  </div>
-                </div>
-                <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/contact')">
-                  <div id="expTab" class="tabs" style="padding:15px 0px;" ng-class="{'tab-underline': currentActiveTab === '/contact'}">
-                    Contact Me
-                  </div>
+            </div>
+            <div class="social-icons">
+                <div class="social-icons-cover">
+                  <a href="https://www.facebook.com/umarthariq" target="_blank"><span style="font-size: 17px;" class="icon-facebook"></span></a>
+                  <a href="https://www.linkedin.com/in/umarthariq" target="_blank"><span style="font-size:22px;" class="icon-linkedin2"></span></a>
+                  <a href="https://github.com/umarthariqalexander" target="_blank"><span style="font-size:22px;" class="icon-github"></span></a>
+                  <a href="mailto:umarthariq@gmail.com"><span style="font-size:22px;" class="icon-envelope-o"></span></a>
                 </div>
               </div>
             </div>
-            <div class="">
-              <div id="contentDisplay" class="content-display">
-                  <ng-view></ng-view>
-              </div>
-            </div>
-        </div>
+      </div>
     </div>
   </body>
 </html>

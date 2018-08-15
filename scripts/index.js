@@ -10,6 +10,9 @@ app.config(['$routeProvider', function($routeProvider){
   .when("/", {
     templateUrl: "./views/projectdesc.htm"
   })
+  .when("/articals", {
+    templateUrl: "./views/articals.htm"
+  })
   .when("/tech", {
     templateUrl: "./views/technologydesc.htm"
   })

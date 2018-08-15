@@ -23,7 +23,7 @@
   }
   .profile-img{
     width: 275px;
-    content: url("../images/myImage.jpg");
+    content: url("../images/newMyImage.png");
   }
   .project-header{
     font-size: 15px;
@@ -227,6 +227,7 @@
   .right-part{
     border-left: 2px solid #eee;
     min-height: 100%;
+    padding-left: 0 !important;
   }
   .hamburger-menu-cover{
     display: none;
@@ -242,11 +243,11 @@
     margin-right: 40px;
   }
   .self-intro-cover{
-    padding: 20px;
+    padding: 0;
   }
   .profile-img{
-    width: 300px;
-    content: url("../images/myImage.jpg");
+    width: 175px;
+    content: url("../images/newMyImage.png");
   }
   .technology-core-animation1{
     animation-name: slideleft;
