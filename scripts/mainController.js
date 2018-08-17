@@ -65,7 +65,7 @@ export default ($scope, $location, $http)=>{
      }
     };
     $scope.navigateToArticle = function(articleId, articleTitle){
-        $location.url('/article?articleId='+articleId+'&articleName='+articleTitle);
+        $location.url('/article/'+articleTitle);
     }
     var animateScrollDown = function(){
         var scrollToTop = window.setInterval(function() {

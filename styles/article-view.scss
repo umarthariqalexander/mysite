@@ -1,0 +1,24 @@
+.article-wrapper{
+    .article-heading{
+        font-size: 24px;
+        font-family: 'Circular-Medium';
+        margin-bottom: 15px
+    }
+    .sub-heading{
+        font-size: 18px;
+        font-family: 'Circular-Book';
+        margin-bottom: 5px;
+    }
+    .sub-header-heading{
+        font-size: 16px;
+        font-family: 'Circular-Book';
+        margin-bottom: 5px;
+    }
+    .highlighter-heading{
+        text-decoration: underline;
+        // text-decoration-color: orange;
+    }
+    .content{
+        font-size: 15px;
+    }
+}

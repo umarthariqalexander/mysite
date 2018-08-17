@@ -10,9 +10,15 @@ app.config(['$routeProvider', function($routeProvider){
   .when("/", {
     templateUrl: "./views/articles.htm"
   })
-  .when("/article", {
-    templateUrl: "./views/article-view.htm"
-  })
+  // .when("/article", {
+  //   templateUrl: "./views/article-view.htm"
+  // })
+  .when('/article/:articleName*', {
+    templateUrl: function(urlattr){
+        return '/views/article-views/' + urlattr.articleName + '.htm';
+    },
+  }
+  )
   .when("/projects", {
     templateUrl: "./views/projectdesc.htm"
   })
