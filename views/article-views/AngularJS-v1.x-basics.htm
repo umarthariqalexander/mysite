@@ -43,13 +43,28 @@
         <li>Custom Directives</li>
     </ul>
     <div class="sub-header-heading">Default Directives</div>
-    <div class="content">
+    <div class="content m-b-5">
             Angular’s default directives has “ng-“ as a prefix. This refers to namespace of angular it helps to differentiate between your own directives and default ones.
     </div>
-    <div>
-            <div class="m-b-5">Angular has plenty of useful default directives but we going to see only most useful directives of angular.</div>
-            <div class="m-b-5">For more directives please refer this link: <a style="text-decoration: underline; text-decoration-color: blue;" href="//docs.angularjs.org/api/ng/directive" target="_blank">Angular Directives</a>
+    <div class="m-b-10">
+            <div class="">Angular has plenty of useful default directives but we going to see only most useful directives of angular.</div>
+            <div class="m-b-10">For more directives please refer this link: <a style="text-decoration: underline; text-decoration-color: blue;" href="//docs.angularjs.org/api/ng/directive" target="_blank">Angular Directives</a>
             </div> 
             <div>Most useful default directives, </div>
     </div>
+    <div class="m-b-5 special-title-header">ng-app</div>
+    <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application. </div>
+    <div class="content m-b-5">Inside that tag what ever you write that will be considered and evaluated as a angular application code.</div>
+    <textarea disabled="true" class="code-wrapper" rows="8">
+    <html> 
+        <head> 
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        </head> 
+        <body> 
+            <div ng-app>&#123; &#123; 3 + 2 &#125; &#125;</div> 
+        </body>
+    </html>
+    </textarea>
+    <div>Here in above example because we have included ng-app, Hence this expression getting evaluated.</div>
+    <div class="m-b-40 m-t-40">Ending</div>
 </div>
