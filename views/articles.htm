@@ -1,0 +1,13 @@
+<div class="articles-wrapper">
+    <div class="each-article-wrapper" ng-repeat="article in articlesList">
+        <div class="image-wrapper">
+            <img ng-src="{{article.banner_img}}" />
+        </div>
+        <div class="article-title">
+            {{article.title}}
+        </div>
+        <div class="article-desc">
+            <span>{{article.desc}}</span>
+        </div>
+    </div>
+</div>

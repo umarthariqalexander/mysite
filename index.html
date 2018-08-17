@@ -38,13 +38,13 @@
         </div>
         <div class="left-part col-md-9 col-sm-12 col-xs-12" style="padding-right: 0;">
           <div id="optionBlock" class="options-cover" style="margin-bottom: 20px;">
-            <div class="row" style="border-bottom: 2px solid #EEEEEE; margin-right: 0;">
-              <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/articals')">
+            <div class="row" style="border-bottom: 2px solid #EEEEEE; margin-right: 0; padding-left: 40px;margin-left: 0;">
+              <div  class="each-tab col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/articals')">
                 <div id="techTab" class="tabs" ng-class="{'tab-underline': currentActiveTab === '/articals'}">
                   Articals
                 </div>
               </div>
-              <div class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/')">
+              <div class="each-tab col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/')">
                 <div id="aboutTab" class="tabs border-bottom-animation" ng-class="{'tab-underline': currentActiveTab === '/'}">
                   Projects
                 </div>
@@ -54,12 +54,12 @@
                   Technologies
                 </div>
               </div> -->
-              <div  class="col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/about')">
+              <div  class="each-tab col-md-3" style="text-align: center; cursor: default;" ng-click="onChangeTab('/about')">
                 <div id="techTab" class="tabs" ng-class="{'tab-underline': currentActiveTab === '/about'}">
                   About Me
                 </div>
               </div>
-              <div  class="col-md-3" style="text-align: center; cursor: default; padding-right: 0;" ng-click="onChangeTab('/contact')">
+              <div  class="each-tab col-md-3" style="text-align: center; cursor: default; padding-right: 0;" ng-click="onChangeTab('/contact')">
                 <div id="expTab" class="tabs" ng-class="{'tab-underline': currentActiveTab === '/contact'}">
                   Contact Me
                 </div>

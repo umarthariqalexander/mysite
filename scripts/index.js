@@ -11,7 +11,7 @@ app.config(['$routeProvider', function($routeProvider){
     templateUrl: "./views/projectdesc.htm"
   })
   .when("/articals", {
-    templateUrl: "./views/articals.htm"
+    templateUrl: "./views/articles.htm"
   })
   .when("/tech", {
     templateUrl: "./views/technologydesc.htm"

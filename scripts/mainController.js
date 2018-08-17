@@ -1,4 +1,5 @@
 import data from './data';
+import articles from './articles.js';
 import htmlImg from '../images/html5.png';
 import cssImg from '../images/css3.png';
 import jsImg from '../images/javascript_logo.png';
@@ -21,6 +22,7 @@ import linuxImg from '../images/linux_logo.png';
 export default ($scope, $location, $http)=>{
     $scope.currentActiveTab = $location.path() || '/';
     $scope.projectList = data.projectList;
+    $scope.articlesList = articles;
     $scope.contactFormSubmitted = false;
     var initializeContactFormValues = ()=>{
         $scope.contactForm = {

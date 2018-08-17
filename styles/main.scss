@@ -1,5 +1,6 @@
 @import 'media.scss';
 @import 'styles.scss';
+@import 'articles.scss';
 @import 'bootstrap.min.scss';
 @font-face{
   font-family: Circular-Book;
@@ -29,8 +30,8 @@ body{
 .tabs{
   font-family: 'Circular-Light';
   font-size: 16px;
-  padding: 15px 0;
-  padding-top: 20px;
+  padding: 10px 0;
+  padding-top: 15px;
 }
 .font-circular-book{
   font-family: 'Circular-Book';
