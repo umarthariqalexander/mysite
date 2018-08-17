@@ -17,6 +17,7 @@ import sublimeImg from '../images/sublime_logo.png';
 import windowsImg from '../images/window_logo.png';
 import macImg from '../images/mac_os_logo_small.png';
 import linuxImg from '../images/linux_logo.png';
+import mvc from '../images/mvc.jpg';
 
 
 export default ($scope, $location, $http)=>{
@@ -52,7 +53,8 @@ export default ($scope, $location, $http)=>{
         sublimeImg,
         windowsImg,
         macImg,
-        linuxImg
+        linuxImg,
+        mvc
     }
     initializeContactFormValues();
     $scope.form = {};
