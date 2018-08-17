@@ -8,10 +8,13 @@ app.controller('mainCtrl', ['$scope', '$location', '$http', mainCtrl]);
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when("/", {
-    templateUrl: "./views/projectdesc.htm"
-  })
-  .when("/articals", {
     templateUrl: "./views/articles.htm"
+  })
+  .when("/article", {
+    templateUrl: "./views/article-view.htm"
+  })
+  .when("/projects", {
+    templateUrl: "./views/projectdesc.htm"
   })
   .when("/tech", {
     templateUrl: "./views/technologydesc.htm"

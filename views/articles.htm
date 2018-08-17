@@ -1,5 +1,5 @@
 <div class="articles-wrapper">
-    <div class="each-article-wrapper" ng-repeat="article in articlesList">
+    <div ng-click="navigateToArticle(article.id, article.linkTitle)" class="each-article-wrapper" ng-repeat="article in articlesList">
         <div class="image-wrapper">
             <img ng-src="{{article.banner_img}}" />
         </div>

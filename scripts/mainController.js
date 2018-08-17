@@ -57,13 +57,16 @@ export default ($scope, $location, $http)=>{
     initializeContactFormValues();
     $scope.form = {};
     $scope.onChangeTab = (path)=>{
-        $location.path(path);
+        $location.url(path);
         $scope.currentActiveTab = $location.path();
         $scope.hideShowMenu();
         if(window.screen.height < 767){
         animateScrollDown();
      }
     };
+    $scope.navigateToArticle = function(articleId, articleTitle){
+        $location.url('/article?articleId='+articleId+'&articleName='+articleTitle);
+    }
     var animateScrollDown = function(){
         var scrollToTop = window.setInterval(function() {
             var pos = document.getElementById('contentDisplay').offsetTop;
