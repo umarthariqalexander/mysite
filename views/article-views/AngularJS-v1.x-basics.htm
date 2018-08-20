@@ -62,7 +62,7 @@
         <div>Most useful default directives, </div>
     </div>
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">ng-app</div>
+        <div class="special-title-header">ng-app</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.
             </div>
         <div class="content m-b-5">Inside that tag what ever you write that will be considered and evaluated as a angular application code.</div>
@@ -83,16 +83,18 @@
     </div>
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">AngularJS Expression</div>
-        <textarea disabled="true" class="code-wrapper" rows="3" style="resize: none">
+        <div class="special-title-header">AngularJS Expression</div>
+        <div class="content m-b-5">AngularJS expressions should be written inside double open and close curly braces. </div>
+        <textarea disabled="true" class="code-wrapper" rows="3">
     <div ng-app>
-            <input ng-model="colorValue" style="background-color:&#123; &#123;colorValue&#125; &#125;"/>
+        <input ng-model="colorValue" style="background-color:{ { colorValue } }"/>
     </div>
         </textarea>
     </div>
     <div class="code-snippet m-b-5">
-        <div class="m-b-5 special-title-header">ng-init</div>
-        <!-- <div class="content">If you include ng-init directive in any of your html tag then that denotes, this tag contains an angular application. -->
+        <div class="special-title-header">ng-init</div>
+        <div class="m-b-5 content">If you want initialize variables in view templates, then we can utilize the ng-init directive for that.</div>
+        <div class="code-snippet">
         <textarea disabled="true" class="code-wrapper" rows="12" style="resize: none">
 <html> 
     <head> 
@@ -118,8 +120,8 @@
         <textarea disabled="true" class="code-wrapper" rows="1">
 var app = angular.module( "myApp", [ ] );
         </textarea>
-        <div class="content m-b-5 m-b-10">The [ ] parameter in the module definition can be used to define dependent modules.</div>
-        <div class="content m-b-5">The module is a container for the application controllers.</div>
+        <div class="content m-b-5 m-b-10">This [ ] parameter in the module definition can be used to define dependent modules.</div>
+        <div class="content">AngularJS Module is a container for the application controllers.</div>
         <textarea disabled="true" class="code-wrapper" rows="4">
 app.controller( "myCtrl", function( $scope ) { 
     $scope.firstName = "John"; 
@@ -129,8 +131,10 @@ app.controller( "myCtrl", function( $scope ) {
     </div>
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">ng-controller</div>
-        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <div class="special-title-header">ng-controller</div>
+        <div class="content">It is used to define controllers in view (HTML) part. </div>
+        <div class="content m-b-5">Hence if you declare any tag with 
+                the particular controller then inside that tag is the scope for that controller. </div>
         <textarea disabled="true" class="code-wrapper" rows="16">
 <html> 
     <head> 
@@ -157,8 +161,9 @@ app.controller( "myCtrl", function( $scope ) {
 
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">ng-bind</div>
-        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <div class="special-title-header">ng-bind</div>
+        <div class="content">It is used to bind your controller variable values with your view tags.</div>
+        <div class="content m-b-5">It only can bind the values from controller. Hence it is only doing one way data binding.</div>
         <textarea disabled="true" class="code-wrapper" rows="16">
 <html> 
     <head> 
@@ -185,8 +190,9 @@ app.controller( "myCtrl", function( $scope ) {
 
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">ng-model</div>
-        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <div class="special-title-header">ng-model</div>
+        <div class="content">It will bind the controller variable values with view part as well as bind the view part values with controller variables, </div>
+        <div class="content m-b-5">Hence it is doing Two way data binding. And it only works with input tags. i.e. input, textarea, select etc.</div>
         <textarea disabled="true" class="code-wrapper" rows="17">
 <html> 
     <head> 
@@ -206,15 +212,11 @@ app.controller( "myCtrl", function( $scope ) {
     </body>
 </html>
          </textarea>
-        <div class="output-wrapper">
-            <div class="output">Output</div>
-            <div></div>
-        </div>
     </div>
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">ng-repeat</div>
-        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <div class="special-title-header">ng-repeat</div>
+        <div class="content m-b-5">It is used to iterate the array values and clone the html elements to display those values.</div>
         <textarea disabled="true" class="code-wrapper" rows="18">
 <html> 
     <head> 
@@ -246,8 +248,8 @@ app.controller( "myCtrl", function( $scope ) {
     </div>
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">ng-class</div>
-        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <div class="special-title-header">ng-class</div>
+        <div class="m-b-5 content">It is used to apply the classes for html tags based on conditions.</div>
         <textarea disabled="true" class="code-wrapper" rows="21">
 <html> 
     <head> 
@@ -278,8 +280,9 @@ app.controller( "myCtrl", function( $scope ) {
     </div>
 
     <div class="code-snippet">
-        <div class="m-b-5 special-title-header">Custom Directives</div>
-        <div class="content">In our code base some times we repeat the same code again and again. Instead we can create a custom directives and put the repeating code to achieve the reusability.</div>
+        <div class="special-title-header">Custom Directives</div>
+        <div class="content">Some times we need to repeat the same code again and again for achieve the same functionality in multiple places. </div>
+        <div class="m-b-5">Instead we can create a custom directives and put the repeating code to achieve the reusability.</div>
         <textarea disabled="true" class="code-wrapper" rows="18">
 <html> 
     <head> 
@@ -331,7 +334,7 @@ app.controller( "myCtrl", function( $scope ) {
     <div class="special-title-header">AngularJS services are,</div>
     <div><span class="highlighter-heading">Singletons:</span> Create a single instance of your service across the application.</div>
     <div class="m-b-20"><span class="highlighter-heading">Lazily instantiated:</span> Create a instance, whenever any component requires it.</div>
-    <div class="content m-b-5">Angular has 30 built in services, some of them are $filter, $http, $log, $window, $rootScope,</div>
+    <div class="content">Angular has 30 built in services, some of them are $filter, $http, $log, $window, $rootScope.</div>
     <div class="code-snippet">
     <div class="special-title-header">$filter - Service:</div>
     <div class="content m-b-5">AngularJS provides filter service to transform data. We can use $filter service in View Templates or in Controller.</div>
@@ -458,5 +461,5 @@ app.controller( "myCtrl", function( $scope ) {
     </body>
 </html>
 </textarea>
-    <div class="m-b-40 m-t-40">Ending</div>
+    <div class="m-b-40 m-t-40"> Thanks and Welcome back !!!</div>
 </div>
