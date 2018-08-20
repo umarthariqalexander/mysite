@@ -67,14 +67,14 @@
             </div>
         <div class="content m-b-5">Inside that tag what ever you write that will be considered and evaluated as a angular application code.</div>
         <textarea disabled="true" class="code-wrapper" rows="8">
-    <html>
-        <head>
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-        </head>
-        <body>
-            <div ng-app>&#123; &#123; 3 + 2 &#125; &#125;</div>
-        </body>
-    </html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app>&#123; &#123; 3 + 2 &#125; &#125;</div>
+    </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -94,18 +94,18 @@
         <div class="m-b-5 special-title-header">ng-init</div>
         <!-- <div class="content">If you include ng-init directive in any of your html tag then that denotes, this tag contains an angular application. -->
         <textarea disabled="true" class="code-wrapper" rows="12" style="resize: none">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-        </head> 
-        <body> 
-            <div ng-app ng-init="i=100; arr=[1,2,3,4,5]; obj={a:123};">
-                    &#123; &#123; i &#125; &#125; 
-                    &#123; &#123; arr[0] &#125; &#125;
-                    &#123; &#123; obj.a &#125; &#125;
-            </div> 
-        </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+    </head> 
+    <body> 
+        <div ng-app ng-init="i=100; arr=[1,2,3,4,5]; obj={a:123};">
+                &#123; &#123; i &#125; &#125; 
+                &#123; &#123; arr[0] &#125; &#125;
+                &#123; &#123; obj.a &#125; &#125;
+        </div> 
+    </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -116,15 +116,15 @@
         <div class="m-b-5 special-title-header">Module</div>
         <div class="content m-b-5">An AngularJS module defines an application.</div>
         <textarea disabled="true" class="code-wrapper" rows="1">
-        var app = angular.module( "myApp", [ ] );
+var app = angular.module( "myApp", [ ] );
         </textarea>
         <div class="content m-b-5 m-b-10">The [ ] parameter in the module definition can be used to define dependent modules.</div>
         <div class="content m-b-5">The module is a container for the application controllers.</div>
         <textarea disabled="true" class="code-wrapper" rows="4">
-        app.controller( "myCtrl", function( $scope ) { 
-            $scope.firstName = "John"; 
-            $scope.lastName = "Doe"; 
-        });
+app.controller( "myCtrl", function( $scope ) { 
+    $scope.firstName = "John"; 
+    $scope.lastName = "Doe"; 
+});
         </textarea>
     </div>
 
@@ -132,22 +132,22 @@
         <div class="m-b-5 special-title-header">ng-controller</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
         <textarea disabled="true" class="code-wrapper" rows="16">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-            <script> 
-                var app = angular.module('angularApp', [ ]); 
-                app.controller('angularCtrl', function($scope){ 
-                        $scope.ctrlVariable = "angularGeek"; 
-                    });
-            </script> 
-      </head> 
-        <body> 
-            <div ng-app="angularApp" ng-controller="angularCtrl"> 
-                    &#123; &#123; ctrlVariable &#125; &#125;
-            </div> 
-        </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', [ ]); 
+            app.controller('angularCtrl', function($scope){ 
+                    $scope.ctrlVariable = "angularGeek"; 
+                });
+        </script> 
+    </head> 
+    <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+                &#123; &#123; ctrlVariable &#125; &#125;
+        </div> 
+    </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -160,22 +160,22 @@
         <div class="m-b-5 special-title-header">ng-bind</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
         <textarea disabled="true" class="code-wrapper" rows="16">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-            <script> 
-                var app = angular.module('angularApp', [ ]); 
-                app.controller('angularCtrl', function($scope){ 
-                        $scope.modelVariable = "I am a angular Geek"; 
-                    });
-                </script> 
-            </head> 
-            <body> 
-            <div ng-app="angularApp" ng-controller="angularCtrl"> 
-                <div ng-bind="modelVariable"></div>
-            </div> 
-            </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', [ ]); 
+            app.controller('angularCtrl', function($scope){ 
+                    $scope.modelVariable = "I am a angular Geek"; 
+                });
+            </script> 
+        </head> 
+        <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+            <div ng-bind="modelVariable"></div>
+        </div> 
+        </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -188,23 +188,23 @@
         <div class="m-b-5 special-title-header">ng-model</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
         <textarea disabled="true" class="code-wrapper" rows="17">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-            <script> 
-                var app = angular.module('angularApp', [ ]); 
-                app.controller('angularCtrl', function($scope){ 
-                        $scope.modelVariable = "I am a angular Geek"; 
-                });
-            </script> 
-     </head> 
-     <body> 
-        <div ng-app="angularApp" ng-controller="angularCtrl"> 
-            <input ng-model="modelVariable"/>
-            <div ng-bind="modelVariable"></div>
-        </div> 
-     </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', [ ]); 
+            app.controller('angularCtrl', function($scope){ 
+                    $scope.modelVariable = "I am a angular Geek"; 
+            });
+        </script> 
+    </head> 
+    <body> 
+    <div ng-app="angularApp" ng-controller="angularCtrl"> 
+        <input ng-model="modelVariable"/>
+        <div ng-bind="modelVariable"></div>
+    </div> 
+    </body>
+</html>
          </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -216,24 +216,24 @@
         <div class="m-b-5 special-title-header">ng-repeat</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
         <textarea disabled="true" class="code-wrapper" rows="18">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-            <script> 
-                var app = angular.module('angularApp', [ ]); 
-                app.controller('angularCtrl', function($scope){ 
-                        $scope.ctrlVariable = ['apple', 'orange', 'grapes'];
-                    });
-                </script> 
-        </head> 
-        <body> 
-            <div ng-app="angularApp" ng-controller="angularCtrl"> 
-                <ul> 
-                    <li ng-repeat="x in ctrlVariable" ng-bind="x"></li>
-                </ul>
-            </div> 
-        </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', [ ]); 
+            app.controller('angularCtrl', function($scope){ 
+                    $scope.ctrlVariable = ['apple', 'orange', 'grapes'];
+                });
+            </script> 
+    </head> 
+    <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+            <ul> 
+                <li ng-repeat="x in ctrlVariable" ng-bind="x"></li>
+            </ul>
+        </div> 
+    </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -249,27 +249,27 @@
         <div class="m-b-5 special-title-header">ng-class</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
         <textarea disabled="true" class="code-wrapper" rows="21">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-            <script> 
-                var app = angular.module('angularApp', [ ]); 
-                app.controller('angularCtrl', function($scope){ 
-                        $scope.test = 1;
-                    });
-                </script> 
-            <style> 
-            .sampleClass{ 
-                background-color: yellow; 
-            }
-            </style>
-        </head> 
-            <body> 
-            <div ng-app="angularApp" ng-controller="angularCtrl"> 
-                <p ng-class="{'sampleClass': test===1}">This is sample paragraph</p>            
-            </div> 
-        </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', [ ]); 
+            app.controller('angularCtrl', function($scope){ 
+                    $scope.test = 1;
+                });
+            </script> 
+        <style> 
+        .sampleClass{ 
+            background-color: yellow; 
+        }
+        </style>
+    </head> 
+        <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+            <p ng-class="{'sampleClass': test===1}">This is sample paragraph</p>            
+        </div> 
+    </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
@@ -281,24 +281,24 @@
         <div class="m-b-5 special-title-header">Custom Directives</div>
         <div class="content">In our code base some times we repeat the same code again and again. Instead we can create a custom directives and put the repeating code to achieve the reusability.</div>
         <textarea disabled="true" class="code-wrapper" rows="18">
-    <html> 
-        <head> 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
-            <script> 
-                var app = angular.module('angularApp', []); 
-                app.directive('myDirective', function(){
-                    return{
-                        template:'<h1>I am own directive</h1>'
-                    }
-                    });
-                </script>
-        </head> 
-        <body> 
-            <div ng-app="angularApp"> 
-                <my-directive></my-directive>
-            </div> 
-        </body>
-    </html>
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', []); 
+            app.directive('myDirective', function(){
+                return{
+                    template:'<h1>I am own directive</h1>'
+                }
+                });
+            </script>
+    </head> 
+    <body> 
+        <div ng-app="angularApp"> 
+            <my-directive></my-directive>
+        </div> 
+    </body>
+</html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
