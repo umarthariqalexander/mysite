@@ -138,13 +138,13 @@
             <script> 
                 var app = angular.module('angularApp', [ ]); 
                 app.controller('angularCtrl', function($scope){ 
-                        $scope.ctrlVariable = 'angularGeek’; 
+                        $scope.ctrlVariable = "angularGeek"; 
                     });
             </script> 
       </head> 
         <body> 
             <div ng-app="angularApp" ng-controller="angularCtrl"> 
-                {{ctrlVariable}}
+                    &#123; &#123; ctrlVariable &#125; &#125;
             </div> 
         </body>
     </html>
@@ -154,6 +154,8 @@
             <div>angularGeek</div>
         </div>
     </div>
+
+
     <div class="code-snippet">
         <div class="m-b-5 special-title-header">ng-bind</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
@@ -162,23 +164,299 @@
         <head> 
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
             <script> 
-                var app = angular.module('angularApp', []); 
+                var app = angular.module('angularApp', [ ]); 
                 app.controller('angularCtrl', function($scope){ 
-                        $scope.ctrlVariable = 'angularGeek’; 
+                        $scope.modelVariable = "I am a angular Geek"; 
+                    });
+                </script> 
+            </head> 
+            <body> 
+            <div ng-app="angularApp" ng-controller="angularCtrl"> 
+                <div ng-bind="modelVariable"></div>
+            </div> 
+            </body>
+    </html>
+        </textarea>
+        <div class="output-wrapper">
+            <div class="output">Output</div>
+            <div>I am a angular Geek</div>
+        </div>
+    </div>
+
+
+    <div class="code-snippet">
+        <div class="m-b-5 special-title-header">ng-model</div>
+        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <textarea disabled="true" class="code-wrapper" rows="17">
+    <html> 
+        <head> 
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+            <script> 
+                var app = angular.module('angularApp', [ ]); 
+                app.controller('angularCtrl', function($scope){ 
+                        $scope.modelVariable = "I am a angular Geek"; 
+                });
+            </script> 
+     </head> 
+     <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+            <input ng-model="modelVariable"/>
+            <div ng-bind="modelVariable"></div>
+        </div> 
+     </body>
+    </html>
+         </textarea>
+        <div class="output-wrapper">
+            <div class="output">Output</div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="code-snippet">
+        <div class="m-b-5 special-title-header">ng-repeat</div>
+        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <textarea disabled="true" class="code-wrapper" rows="18">
+    <html> 
+        <head> 
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+            <script> 
+                var app = angular.module('angularApp', [ ]); 
+                app.controller('angularCtrl', function($scope){ 
+                        $scope.ctrlVariable = ['apple', 'orange', 'grapes'];
                     });
                 </script> 
         </head> 
         <body> 
             <div ng-app="angularApp" ng-controller="angularCtrl"> 
-                <h1 ng-bind="ctrlVariable"></h1>
+                <ul> 
+                    <li ng-repeat="x in ctrlVariable" ng-bind="x"></li>
+                </ul>
             </div> 
         </body>
     </html>
         </textarea>
         <div class="output-wrapper">
             <div class="output">Output</div>
-            <div>angularGeek</div>
+            <ul>
+                <li>apple</li>
+                <li>orange</li>
+                <li>grapes</li>
+            </ul>
         </div>
     </div>
+
+    <div class="code-snippet">
+        <div class="m-b-5 special-title-header">ng-class</div>
+        <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.</div>
+        <textarea disabled="true" class="code-wrapper" rows="21">
+    <html> 
+        <head> 
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+            <script> 
+                var app = angular.module('angularApp', [ ]); 
+                app.controller('angularCtrl', function($scope){ 
+                        $scope.test = 1;
+                    });
+                </script> 
+            <style> 
+            .sampleClass{ 
+                background-color: yellow; 
+            }
+            </style>
+        </head> 
+            <body> 
+            <div ng-app="angularApp" ng-controller="angularCtrl"> 
+                <p ng-class="{'sampleClass': test===1}">This is sample paragraph</p>            
+            </div> 
+        </body>
+    </html>
+        </textarea>
+        <div class="output-wrapper">
+            <div class="output">Output</div>
+            <p style="background-color: yellow;">This is sample paragraph</p>
+        </div>
+    </div>
+
+    <div class="code-snippet">
+        <div class="m-b-5 special-title-header">Custom Directives</div>
+        <div class="content">In our code base some times we repeat the same code again and again. Instead we can create a custom directives and put the repeating code to achieve the reusability.</div>
+        <textarea disabled="true" class="code-wrapper" rows="18">
+    <html> 
+        <head> 
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+            <script> 
+                var app = angular.module('angularApp', []); 
+                app.directive('myDirective', function(){
+                    return{
+                        template:'<h1>I am own directive</h1>'
+                    }
+                    });
+                </script>
+        </head> 
+        <body> 
+            <div ng-app="angularApp"> 
+                <my-directive></my-directive>
+            </div> 
+        </body>
+    </html>
+        </textarea>
+        <div class="output-wrapper">
+            <div class="output">Output</div>
+            <h1>I am own directive</h1>
+        </div>
+    </div>
+    <div class="m-t-10">
+        Different ways to invoke the custom directives,
+    </div>
+    <ul>
+        <li>As a Element Name
+                <textarea disabled="true" class="code-wrapper" rows="1"><my-directive></my-directive> </textarea>
+        </li>
+        <li>    <div>As a Tag Attribute </div>
+                <textarea disabled="true" class="code-wrapper" rows="1"><div my-directive></div></textarea>
+        </li>
+        <li>
+            <div>As a Class Name</div>
+            <textarea disabled="true" class="code-wrapper" rows="1"><div class="my-directive"></div></textarea>
+        </li>
+        <li><div>As a Comment</div> <textarea disabled="true" class="code-wrapper" rows="1"><!-- directive: my-directive --></textarea> </li>
+    </ul>
+
+
+    <div class="sub-heading">Services</div>
+    <div class="special-title-header">When you need service,</div>
+    <div>- When you have common functionality that needed by multiple controllers / entire application. </div>
+    <div class="m-b-5">- When you don’t want to repeat your common function body in multiple places where ever it requires.</div>
+
+    <div class="special-title-header">AngularJS services are,</div>
+    <div><span class="highlighter-heading">Singletons:</span> Create a single instance of your service across the application.</div>
+    <div class="m-b-20"><span class="highlighter-heading">Lazily instantiated:</span> Create a instance, whenever any component requires it.</div>
+    <div class="content m-b-5">Angular has 30 built in services, some of them are $filter, $http, $log, $window, $rootScope,</div>
+    <div class="code-snippet">
+    <div class="special-title-header">$filter - Service:</div>
+    <div class="content m-b-5">AngularJS provides filter service to transform data. We can use $filter service in View Templates or in Controller.</div>
+    <div class="special-title-header">$filter - In View Templates,</div>
+    <div class="content m-b-5">In Templates we use pipe '|' symbol to apply any filters</div>
+    <textarea disabled="true" class="code-wrapper" rows="19">
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', []); 
+            app.controller('angularCtrl', function($scope) { 
+                $scope.names = ['apple', 'orange', 'grapes', 'banana']; 
+            });
+        </script>
+    </head> 
+    <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+          <input ng-model="searchKey"/>
+          <ul> 
+           <li ng-repeat="name in names | filter:searchKey | orderBy" ng-bind="name | uppercase"></li>
+          </ul>
+         </div> 
+    </body>
+</html>
+    </textarea>
+        </div>
+<div class="code-snippet">
+    <div class="special-title-header m-b-5">
+            $filter - In Controller,
+        </div>
+        <textarea disabled="true" class="code-wrapper" rows="19">
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', []); 
+            app.controller('angularCtrl', function($scope, $filter) { 
+                $scope.name = 'angulargeek’; 
+                $scope.updatedName = $filter('uppercase')($scope.name); 
+            });
+        </script>
+        </head> 
+        <body> 
+        <div ng-app="angularApp"> 
+            { { name } }
+            { { updatedName } }
+        </div> 
+    </body>
+</html>
+    </textarea>
+</div>
+
+<div class="code-snippet">
+    <div class="special-title-header m-b-5">
+            $http - Service:
+    </div>
+    <textarea disabled="true" class="code-wrapper" rows="24">
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script> 
+            var app = angular.module('angularApp', []); 
+            app.controller('angularCtrl', function($scope, $http) {    
+            $http.get("https://reqres.in/api/users?page=1&per_page=10")                                                              
+                .then(function(response){ 
+                        $scope.users = response.data.data; 
+                }); 
+            });
+        </script>
+    </head> 
+    <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+            <ul> 
+                <li ng-repeat="user in users"> 
+                    <div>{ { user.first_name } }</div> 
+                        <img ng-src="{ { user.avatar } }"/> 
+                </li> 
+            </ul>
+        </div> 
+    </body>
+</html>
+    </textarea>
+</div>
+<div class="sub-heading">Custom Services,</div>
+<div class="special-title-header">Ways to create a custom service,</div>
+<ul>
+    <li>Using Service method - It will return the service instance.</li>
+    <li>Using Factory method - It will return the object with the properties.</li>
+</ul>
+
+<textarea disabled="true" class="code-wrapper" rows="33">
+<html> 
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
+        <script>               
+            var app = angular.module('angularApp', ['calculator']); 
+            app.controller('angularCtrl', function($scope, calculatorService, calculatorFactory) {                      
+            $scope.resultSquare = calculatorService.square(10); 
+            $scope.resultCube = calculatorFactory.cube(10); 
+            }); 
+
+            var calc = angular.module('calculator', []); 
+
+            calc.service('calculatorService', function(){   // Using Service Method
+                this.square = function(a){ 
+                    return a*a; 
+                } 
+            }); 
+
+            calc.factory('calculatorFactory', function(){   // Using Factory Method
+                return{ 
+                    cube: function(a){ 
+                    return a*a*a; 
+                    } 
+                } 
+            }); 
+        </script> 
+    </head> 
+    <body> 
+        <div ng-app="angularApp" ng-controller="angularCtrl"> 
+                { { resultSquare } } { { resultCube } } 
+        </div> 
+    </body>
+</html>
+</textarea>
     <div class="m-b-40 m-t-40">Ending</div>
 </div>
