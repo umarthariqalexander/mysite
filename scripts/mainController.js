@@ -22,6 +22,7 @@ import mvc from '../images/mvc.jpg';
 
 export default ($scope, $location, $http)=>{
     $scope.currentActiveTab = $location.path() || '/';
+    $scope.viewArticle = (() => {return $location.path().split('/').indexOf('article') > -1;})();
     $scope.projectList = data.projectList;
     $scope.articlesList = articles;
     $scope.contactFormSubmitted = false;
@@ -61,6 +62,7 @@ export default ($scope, $location, $http)=>{
     $scope.onChangeTab = (path)=>{
         $location.url(path);
         $scope.currentActiveTab = $location.path();
+        $scope.viewArticle = (() => {return $location.path().split('/').indexOf('article') > -1;})();
         $scope.hideShowMenu();
         if(window.screen.height < 767){
         animateScrollDown();
