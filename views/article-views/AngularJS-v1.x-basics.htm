@@ -308,32 +308,32 @@ app.controller( "myCtrl", function( $scope ) {
             <h1>I am own directive</h1>
         </div>
     </div>
-    <div class="m-t-10">
+    <div class="m-t-10 content">
         Different ways to invoke the custom directives,
     </div>
     <ul>
-        <li>As a Element Name
+        <li class="content">As a Element Name
                 <textarea disabled="true" class="code-wrapper" rows="1"><my-directive></my-directive> </textarea>
         </li>
-        <li>    <div>As a Tag Attribute </div>
+        <li class="content">    <div>As a Tag Attribute </div>
                 <textarea disabled="true" class="code-wrapper" rows="1"><div my-directive></div></textarea>
         </li>
-        <li>
+        <li class="content">
             <div>As a Class Name</div>
             <textarea disabled="true" class="code-wrapper" rows="1"><div class="my-directive"></div></textarea>
         </li>
-        <li><div>As a Comment</div> <textarea disabled="true" class="code-wrapper" rows="1"><!-- directive: my-directive --></textarea> </li>
+        <li class="content"><div>As a Comment</div> <textarea disabled="true" class="code-wrapper" rows="1"><!-- directive: my-directive --></textarea> </li>
     </ul>
 
 
     <div class="sub-heading">Services</div>
     <div class="special-title-header">When you need service,</div>
-    <div>- When you have common functionality that needed by multiple controllers / entire application. </div>
-    <div class="m-b-5">- When you don’t want to repeat your common function body in multiple places where ever it requires.</div>
+    <div class="content">- When you have common functionality that needed by multiple controllers / entire application. </div>
+    <div class="m-b-5 content">- When you don’t want to repeat your common function body in multiple places where ever it requires.</div>
 
     <div class="special-title-header">AngularJS services are,</div>
-    <div><span class="highlighter-heading">Singletons:</span> Create a single instance of your service across the application.</div>
-    <div class="m-b-20"><span class="highlighter-heading">Lazily instantiated:</span> Create a instance, whenever any component requires it.</div>
+    <div><span class="highlighter-heading">Singletons:</span> <span class="content">Create a single instance of your service across the application.</span></div>
+    <div class="m-b-20"><span class="highlighter-heading">Lazily instantiated:</span> <span class="content">Create a instance, whenever any component requires it.</span></div>
     <div class="content">Angular has 30 built in services, some of them are $filter, $http, $log, $window, $rootScope.</div>
     <div class="code-snippet">
     <div class="special-title-header">$filter - Service:</div>
@@ -422,8 +422,8 @@ app.controller( "myCtrl", function( $scope ) {
 <div class="sub-heading">Custom Services,</div>
 <div class="special-title-header">Ways to create a custom service,</div>
 <ul>
-    <li>Using Service method - It will return the service instance.</li>
-    <li>Using Factory method - It will return the object with the properties.</li>
+    <li class="content">Using Service method - It will return the service instance.</li>
+    <li class="content">Using Factory method - It will return the object with the properties.</li>
 </ul>
 
 <textarea disabled="true" class="code-wrapper" rows="33">
