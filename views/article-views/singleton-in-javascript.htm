@@ -1,0 +1,59 @@
+<div class="article-wrapper">
+    <div class="article-heading">Singletons in Javascript</div>
+    <div class="sub-heading">Introduction</div>
+    <div class="content m-b-5">
+            Singleton is one of the simplest design pattern, which allows only single instance of the class / object to be created.
+    </div>
+    <div class="highlighter-heading">Examples:</div>
+    <div class="content">   
+        1. In AngularJS, will create a single instance of a service / factory methods to make API calls.
+    </div>
+    <div class="content m-b-10">
+     2. In NodeJS, when try to do multiple Database operations in the same script will create a single instance for that Database to accomplish all the operations.
+    </div>
+    <div class="sub-heading">Definition</div>
+    <div class="content m-b-10">A Singleton is an object which can only be instantiated one time. Repeated calls to its constructor return the same instance and in this way one can ensure that they don't accidentally create, say, two Users in a single User application. </div>
+    <div class="sub-heading">Singleton in Javascript</div>
+    <div class="code-snippet">
+            <textarea disabled="true" class="code-wrapper" rows="38">
+
+    var User = (function(){             // Self Invoking function
+            
+            var instance;
+
+            function createUser(){
+                var user = new Object({firstName: 'John', age: 25});
+                return user;
+            }
+
+            var editUser = function (newName){
+                instance.firstName = newName;
+                return instance;
+            }
+
+            return {
+                getUser : function(){
+                            if(!instance){
+                                instance = createUser(); 
+                            }
+                            return instance;
+                },
+                editUser: editUser
+            };
+    })();
+
+    var user1 = User.getUser();
+    var user2 = User.getUser();
+
+    document.write(user1 === user2); // True; Because Both the object instance are same.
+    document.write(user1.firstName+"\n"); // John
+    document.write(user2.firstName); // John
+
+    User.editUser('Mark');              // Edit the User object property
+
+    document.write(user1.firstName+"\n"); // Mark
+    document.write(user2.firstName);    // Mark
+            </textarea>
+    </div>
+    <div class="m-b-20">Thanks for reading this!!!</div>
+</div>
