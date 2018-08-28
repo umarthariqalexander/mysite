@@ -15,7 +15,28 @@
             img{
                 max-width: 130px;
             }
+            .default-img-banner{
+                background-color: #EDD142;
+                min-width: 130px;
+                min-height: 210px;
+                display: flex;
+                position: relative;
+                .default-banner-title{
+                    margin: auto;
+                    color: #BD0FE1;
+                    font-size: 30px;
+                }
+                .js{    
+                    position: absolute;
+                    right: 5px;
+                    bottom: 0;
+                    font-size: 25px;
+                    font-family: 'Circular-Medium';}
+            }
             border-bottom: 2px solid #EEE;
+        }
+        & .default-banner-wrapper{
+            padding: 0;
         }
         .article-title{
             text-align:center;
