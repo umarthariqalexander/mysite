@@ -28,11 +28,12 @@
 
     <!-- Local references -->
     <!-- <link rel="stylesheet" type="text/scss" href="./styles/bootstrap.min.scss" /> -->
-    <link rel="icon" href="./images/UT_4.ico"/>
+    <link rel="icon" href="./UT_4.ico"/>
     <link rel="stylesheet" href="./bundle.css"/>
   </head>
   <body>
     <div ng-app="myApp" ng-controller="mainCtrl" class="main-cover row">
+        <img ng-src="{{images.ut}}" style="display: none;"/>
         <div ng-click="hideShowMenu()" class="hamburger-menu-cover">
           <span class="icon-menu"></span>
         </div>

@@ -17,7 +17,9 @@ import angularImg from '../images/angular_small_logo.png';
 // import windowsImg from '../images/window_logo.png';
 // import macImg from '../images/mac_os_logo_small.png';
 // import linuxImg from '../images/linux_logo.png';
+import ut from '../images/UT_4.ico';
 import mvc from '../images/mvc.jpg';
+
 
 
 export default ($scope, $location, $http)=>{
@@ -43,6 +45,7 @@ export default ($scope, $location, $http)=>{
         // jsImg,
         // reactImg,
         angularImg,
+        ut,
         // nodeImg,
         // reduxImg,
         // sassImg,

@@ -30,13 +30,13 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 5000,
-                            name: 'images/[hash]-[name].[ext]'
+                            name: 'images/[name].[ext]'
                         }
                     }
                 ]
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot|svg|ico)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
