@@ -1,7 +1,10 @@
+<div class="mobile-header">
+    Articals
+  </div>
 <div class="articles-wrapper">
     <div ng-click="navigateToArticle(article.id, article.linkTitle)" class="each-article-wrapper" ng-repeat="article in articlesList">
         <div ng-if="article.banner_img" class="image-wrapper">
-            <img ng-src="{{article.banner_img}}" />
+            <img ng-src="{{getImage(article.banner_img)}}" />
         </div>
         <div ng-if="article.banner_title" class="image-wrapper" ng-class="{'default-banner-wrapper': !article.banner_img}">
             <div class="default-img-banner">

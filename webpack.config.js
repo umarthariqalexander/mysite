@@ -78,6 +78,11 @@ module.exports = {
               from: './views/',
               to: './views/[name].[ext]',
               toType: 'template'
+            },
+            {
+                from: './views/article-views/',
+                to: './views/article-views/[name].[ext]',
+                toType: 'template'
             }
           ]),
           new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })

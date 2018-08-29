@@ -68,6 +68,9 @@ export default ($scope, $location, $http)=>{
         animateScrollDown();
      }
     };
+    $scope.getImage = function(imageName){
+        if(imageName) return $scope.images[imageName];
+    }
     $scope.navigateToArticle = function(articleId, articleTitle){
         $location.url('/article/'+articleTitle);
     }
