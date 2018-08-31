@@ -21,7 +21,6 @@
     "body-parser": "^1.18.2",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
-    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
@@ -43,6 +42,7 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "eslint": "^5.4.0"
   }
 }

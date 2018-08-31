@@ -3,7 +3,7 @@ const webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-var ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
@@ -25,7 +25,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 include: path.resolve(__dirname, 'images/'),
-                use:[
+                use: [
                     {
                         loader: 'url-loader',
                         options: {
@@ -45,7 +45,7 @@ module.exports = {
                 }]
             },
             {
-            test: /\.(s*)css$/,            
+            test: /\.(s*)css$/,
             use: extractPlugin.extract({
                     use: ['css-loader', 'sass-loader'],
                     fallback: 'style-loader'
@@ -60,7 +60,7 @@ module.exports = {
                     presets: ['env']
                   }
                 }
-            }  
+            }
         ]
     },
     plugins: [
@@ -85,8 +85,13 @@ module.exports = {
                 toType: 'template'
             }
           ]),
-          new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
-    ],
+          new ImageminPlugin({
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                // disable: process.env.NODE_ENV !== 'production', // Disable during development
+                pngquant: {
+                    quality: '0-10'
+            }})
+        ],
     optimization: {
         minimize: true,
         minimizer: [new UglifyJsPlugin({

@@ -3,7 +3,7 @@ const webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-var ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
@@ -26,7 +26,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 include: path.resolve(__dirname, 'images/'),
-                use:[
+                use: [
                     {
                         loader: 'url-loader',
                         options: {
@@ -46,7 +46,7 @@ module.exports = {
                 }]
             },
             {
-            test: /\.(s*)css$/,            
+            test: /\.(s*)css$/,
             use: extractPlugin.extract({
                     use: ['css-loader', 'sass-loader'],
                     fallback: 'style-loader'
@@ -61,7 +61,7 @@ module.exports = {
                     presets: ['env']
                   }
                 }
-            }  
+            }
         ]
     },
     plugins: [
@@ -81,7 +81,7 @@ module.exports = {
     ],
     devServer: {
         hot: true,
-        port: 9000,
+        port: 9000
         // proxy: {
         //     '/': {
         //         target: 'http://localhost:3000/',
