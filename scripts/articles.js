@@ -13,11 +13,18 @@ let articles = [{
         desc: 'Learn how to find an element in array in effective way with different versions of javascript'
     }, {
         id: 3,
-        title: 'Singleton in Javascript',
+        title: 'Singleton in JavaScript',
         linkTitle: 'singleton-in-javascript',
         banner_img: '',
         banner_title: 'Singleton',
         desc: 'Understand the singleton pattern in Javascript'
+    }, {
+        id: 4,
+        title: 'Object Enumeration',
+        linkTitle: 'javascript-object-enumeration',
+        banner_img: '',
+        banner_title: 'Enumeration',
+        desc: 'Learn different ways to iterate/enumerate key and values of an Object'
     }
 ];
 

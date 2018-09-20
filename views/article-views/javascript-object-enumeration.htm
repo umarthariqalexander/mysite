@@ -1,0 +1,41 @@
+<div class="article-wrapper">
+    <div class="article-heading">Different ways to enumerate the Object key and value pairs in Javascript</div>
+    <div class="sub-heading">Introduction</div>
+    <div class="content">Unlike Array's for loop or map/forEach methods, objects dont have any direct methods to enumerate the</div>
+    <div class="content m-b-10"> object properties. And moreover object properties hold different values for keys.</div>
+    <div class="content m-b-10"> Hence we have to find some other ways to enumerate the object properties.</div>
+    <div class="sub-heading">In ES5 - Using Object.entries and forEach</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">
+
+    var obj = {a: 'apple', b: 'ball', 'c': 'cat'};
+
+    Object.keys(obj).forEach((item)=>{
+        console.log(obj[item]);                         // apple, ball, cat
+    });
+    </textarea>
+    </div>        
+    <div class="sub-heading">In ES6 - for of() method</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">
+
+    var obj = {a: 'apple', b: 'ball', 'c': 'cat'};
+
+    for(let key of Object.keys(obj)){
+        console.log(obj[key]);                          // apple, ball, car
+    }
+    </textarea>
+    </div>  
+
+    <div class="sub-heading">In ECMA 2017 - Object.entries() method</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">   
+    var obj = {a: 'apple', b: 'ball', 'c': 'cat'};
+
+    Object.entries(obj).forEach(([key, value])=>{
+        console.log(key); console.log(value);           // a apple, b ball, c cat
+    });
+    </textarea>
+    </div>
+    <div class="m-b-40 m-t-40"> Thanks and Welcome back !!!</div>
+</div>
