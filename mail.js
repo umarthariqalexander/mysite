@@ -1,25 +1,25 @@
-var nodemailer = require('nodemailer');
+let nodemailer = require('nodemailer');
 
-var sendmail = function (mailParameters) {
-  var name = mailParameters.firstName+mailParameters.lastName;
-  var mail = mailParameters.mail;
-  var subject  = mailParameters.subject;
-  var msg = mailParameters.msg;
-  var html = `<h2 style="font-weight: 100;">You got this message from ${name}.</h2>
+let sendmail = function (mailParameters) {
+  let name = mailParameters.firstName + mailParameters.lastName;
+  let mail = mailParameters.mail;
+  let subject = mailParameters.subject;
+  let msg = mailParameters.msg;
+  let html = `<h2 style="font-weight: 100;">You got this message from ${name}.</h2>
               <div style="margin-bottom: 15px;">Receipient Mail : ${mail}.</div>
               <div>Message from this person,</div>
               <p>${msg}</p>`;
-  var text = `You got the mail from ${name}. ${name} Mail Address is ${mail}. Message from this person ${msg}.`;
+  let text = `You got the mail from ${name}. ${name} Mail Address is ${mail}. Message from this person ${msg}.`;
 
-  var transporter = nodemailer.createTransport({
+  let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'FromYourPersonalWebsite@gmail.com',
-      pass: 'mypersonalwebsitemailpwd'
+      pass: 'esanathamgovtschool2011Batch'
     }
   });
 
-  var mailOptions = {
+  let mailOptions = {
     from: 'umarmthariq@gmail.com',
     to: 'umarthariq@gmail.com',
     subject: subject,
@@ -27,11 +27,11 @@ var sendmail = function (mailParameters) {
   };
   // Async Function
   transporter.sendMail(mailOptions, (err, info)=>{
-    if(err){
+    if(err) {
       console.log(err);
     }
     else{
-      console.log('Email Sent to '+ info.response);
+      console.log('Email Sent to ' + info.response);
     }
   });
   return true;
@@ -39,4 +39,4 @@ var sendmail = function (mailParameters) {
 
 module.exports = {
   sendmail: sendmail
-}
+};
