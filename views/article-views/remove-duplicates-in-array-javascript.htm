@@ -1,0 +1,48 @@
+<div class="article-wrapper">
+    <div class="article-heading">More Efficient & Easy way to remove duplicates of Array in Javascript</div>
+    <div class="sub-heading">Introduction</div>
+    <div class="content">There are different ways to remove duplicates of array but we going to utilize the new ES6 features of Javascript to solve this one.</div>
+    <div class="content m-b-10"> Lets get into that,</div>
+    <div class="sub-heading">Array contains primitive data types,</div>
+    <span class="content">i.e. primitive data types - numbers, string, boolean etc</span>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">
+
+    let arr = [1, 2, 2, 3,'apple', 'orange', 3, 'grape', 1, 2, 'orange', 'apple']; 
+
+    let resultArr = [...new Set(arr)]; // Using Set Data structure to remove duplicates.
+
+    console.log(resultArr); // [1, 2, 3, "apple", "orange", "grape"]
+
+    </textarea>
+    <div class="content">Here we are utilizing the nature of Set data structure as it can only hold unique values. (<a href="/#!/article/javascript-set">Read more about Set data structure.</a>)</div>            
+    </div>
+    <div class="sub-heading">Array contains objects,</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="22">
+
+    var duplicateObjectsArr = [
+        {id: 1, name: 'Umar'}, {id: 2, name: 'thariq'}, {id: 3, name: 'arif'}, 
+        {id: 1, name: 'Umar'}, {id: 4, name: 'John'}, {id: 5, name: 'Hardy'}, 
+        {id: 2, name: 'thariq'}, {id: 4, name: 'John'}
+    ];
+
+    let hashSet = new Set(); // create a new hash Set 
+
+    let getHash = (item)=>{return item.id}; // here for each object unique value is id.
+
+    let result = duplicateObjectsArr.filter(item => {
+        let objHash = getHash(item);
+        if(hashSet.has(objHash)){
+                return false;
+        }
+        hashSet.add(objHash);
+        return true;
+    });
+
+    console.log(result); // only unique objects will be in this.
+
+    </textarea>
+    </div>  
+    <div class="m-b-40 m-t-40"> Thanks and Welcome back !!!</div>
+</div>

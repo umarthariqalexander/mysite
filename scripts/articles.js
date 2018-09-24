@@ -33,6 +33,14 @@ let articles = [{
         banner_img: '',
         banner_title: 'Set',
         desc: 'Learn new ES6 Data structure Set'
+    },
+    {
+        id: 6,
+        title: 'Remove duplicates - Array',
+        linkTitle: 'remove-duplicates-in-array-javascript',
+        banner_img: '',
+        banner_title: 'Array',
+        desc: 'Learn efficient & easy way to remove duplicates of Array using Set data structure'
     }
 ];
 
