@@ -25,6 +25,14 @@ let articles = [{
         banner_img: '',
         banner_title: 'Enumeration',
         desc: 'Learn different ways to iterate/enumerate key and values of an Object'
+    },
+    {
+        id: 5,
+        title: 'Set in Javascript',
+        linkTitle: 'javascript-set',
+        banner_img: '',
+        banner_title: 'Set',
+        desc: 'Learn new ES6 Data structure Set'
     }
 ];
 
