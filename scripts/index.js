@@ -3,7 +3,7 @@ import '../styles/main.scss';
 import mainCtrl from './mainController.js';
 
 let app = angular.module('myApp', ['ngRoute']);
-app.controller('mainCtrl', ['$scope', '$location', '$http', '$rootScope', mainCtrl]);
+app.controller('mainCtrl', ['$scope', '$location', '$http', mainCtrl]);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -30,11 +30,11 @@ app.config(['$routeProvider', function($routeProvider) {
   });
 }]);
 
-app.run(function ($rootScope) {
+app.run(['$rootScope', function ($rootScope) {
   $rootScope.$on('$locationChangeSuccess', function () {
       window.scroll(0, 0);
   });
-});
+}]);
 
 
 // var scrollUpEvent = window.addEventListener('scroll',function(){

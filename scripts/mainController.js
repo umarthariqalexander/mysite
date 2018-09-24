@@ -22,7 +22,7 @@ import mvc from '../images/mvc.jpg';
 
 
 
-export default ($scope, $location, $http, $rootScope)=>{
+export default ($scope, $location, $http)=>{
     $scope.currentActiveTab = $location.path() || '/';
     $scope.viewArticle = (() => {return $location.path().split('/').indexOf('article') > -1;})();
     $scope.projectList = data.projectList;
