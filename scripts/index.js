@@ -3,7 +3,7 @@ import '../styles/main.scss';
 import mainCtrl from './mainController.js';
 
 let app = angular.module('myApp', ['ngRoute']);
-app.controller('mainCtrl', ['$scope', '$location', '$http', mainCtrl]);
+app.controller('mainCtrl', ['$scope', '$location', '$http', '$rootScope', mainCtrl]);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider

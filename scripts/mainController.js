@@ -22,13 +22,13 @@ import mvc from '../images/mvc.jpg';
 
 
 
-export default ($scope, $location, $http)=>{
+export default ($scope, $location, $http, $rootScope)=>{
     $scope.currentActiveTab = $location.path() || '/';
     $scope.viewArticle = (() => {return $location.path().split('/').indexOf('article') > -1;})();
     $scope.projectList = data.projectList;
     $scope.articlesList = articles;
     $scope.contactFormSubmitted = false;
-    var initializeContactFormValues = ()=>{
+    let initializeContactFormValues = ()=>{
         $scope.contactForm = {
             firstName: '',
             lastName: '',
@@ -38,7 +38,7 @@ export default ($scope, $location, $http)=>{
         };
         $scope.contactFormSubmitFailed = false;
         $scope.requiredFiledAlert = false;
-    }
+    };
     $scope.images = {
         // htmlImg,
         // cssImg,
@@ -59,7 +59,7 @@ export default ($scope, $location, $http)=>{
         // macImg,
         // linuxImg,
         mvc
-    }
+    };
     initializeContactFormValues();
     $scope.form = {};
     $scope.onChangeTab = (path)=>{
@@ -67,46 +67,46 @@ export default ($scope, $location, $http)=>{
         $scope.currentActiveTab = $location.path();
         $scope.viewArticle = (() => {return $location.path().split('/').indexOf('article') > -1;})();
         $scope.hideShowMenu();
-        if(window.screen.height < 767){
+        if(window.screen.height < 767) {
         animateScrollDown();
      }
     };
-    $scope.getImage = function(imageName){
-        if(imageName) return $scope.images[imageName];
-    }
-    $scope.navigateToArticle = function(articleId, articleTitle){
-        $location.url('/article/'+articleTitle);
-    }
-    var animateScrollDown = function(){
+    $scope.getImage = function(imageName) {
+        if(imageName) {return $scope.images[imageName];}
+    };
+    $scope.navigateToArticle = function(articleId, articleTitle) {
+        $location.url('/article/' + articleTitle);
+    };
+    var animateScrollDown = function() {
         var scrollToTop = window.setInterval(function() {
-            var pos = document.getElementById('contentDisplay').offsetTop;
+            let pos = document.getElementById('contentDisplay').offsetTop;
             if ( pos > window.pageYOffset + 25 ) {
                 window.scrollTo( 0, window.pageYOffset + 10 );
             } else {
                 window.clearInterval( scrollToTop );
             }
         }, 16);
-    }
-    $scope.animateScrollup = function(){
+    };
+    $scope.animateScrollup = function() {
         var scrollToBottom = window.setInterval(function() {
-            var pos = document.getElementById('leftPart').offsetTop;
+            let pos = document.getElementById('leftPart').offsetTop;
             if ( pos < window.pageYOffset ) {
                 window.scrollTo( 0, window.pageYOffset - 10 );
             } else {
                 window.clearInterval( scrollToBottom );
             }
         }, 16);
-      }
-    $scope.fetchFieldValues = function(){
+      };
+    $scope.fetchFieldValues = function() {
         $scope.form.contactForm.$submitted = true;
         $scope.contactFormSubmitted = false;
-        if($scope.form.contactForm.$valid){
+        if($scope.form.contactForm.$valid) {
             $scope.requiredFiledAlert = false;
-            var queryObj = {
-                firstName : $scope.contactForm.firstName, 
-                lastName: $scope.contactForm.lastName, 
-                subject: $scope.contactForm.subject, 
-                mail: $scope.contactForm.email, 
+            let queryObj = {
+                firstName: $scope.contactForm.firstName,
+                lastName: $scope.contactForm.lastName,
+                subject: $scope.contactForm.subject,
+                mail: $scope.contactForm.email,
                 msg: $scope.contactForm.message
             };
             apihit(queryObj);
@@ -114,36 +114,37 @@ export default ($scope, $location, $http)=>{
         else{
             $scope.requiredFiledAlert = true;
         }
-  }
-  let apihit = function (queryObj){
+  };
+  let apihit = function (queryObj) {
         $http({
-            url:'/api/sendmail',
-            method: "POST",
+            url: '/api/sendmail',
+            method: 'POST',
             data: {queryObj}
         })
         .then(function (response) {
             $scope.contactFormSubmitted = true;
             $scope.clearTheForm();
-        }, 
+        },
         function (error) {
             $scope.contactFormSubmitFailed = true;
         });
   };
-  $scope.clearTheForm = function(){
+  $scope.clearTheForm = function() {
         initializeContactFormValues();
       $scope.form.contactForm.$setPristine();
-      
-  }
-  $scope.hideShowMenu = function (){
-    var element = document.getElementById('optionBlock');
-    if(element.classList.contains('display-block')){
+
+  };
+  $scope.hideShowMenu = function () {
+    let element = document.getElementById('optionBlock');
+    if(element.classList.contains('display-block')) {
       element.classList.remove('option-animation');
       element.classList.add('option-hide-animation');
-      setTimeout(function(){document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation')}, 1000);
+      setTimeout(function() {document.getElementById('optionBlock').classList.remove('display-block', 'option-hide-animation');}, 1000);
     }
     else{
       element.classList.add('display-block');
       element.classList.add('option-animation');
     }
-  }
+  };
 }
+;
