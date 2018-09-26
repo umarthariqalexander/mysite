@@ -73,6 +73,7 @@
   }
   .profile-img{
     width: 75%;
+    border-radius: 50%;
     margin-top: 10%;
     content: url("../images/newMyImage.png");
   }
@@ -325,7 +326,8 @@
     padding: 0;
   }
   .profile-img{
-    width: 175px;
+    width: 65%;
+    border-radius: 50%;
     content: url("../images/newMyImage.png");
   }
   .technology-core-animation1{
