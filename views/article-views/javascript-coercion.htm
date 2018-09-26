@@ -1,0 +1,144 @@
+<div class="article-wrapper">
+    <div class="article-heading">Learn Coercion in Javascript</div>
+    <div class="sub-heading">Introduction</div>
+    <div class="content m-b-10">Coercion is unexpected type casting by javascript. It’s all because of ‘Weakly typed’ nature of javascript. It is very crucial to know about coercion as we are using this everyday of coding life without the knowledge of what happening under the hood.</div>
+
+    <div class="special-title-header">Coercion can convert the operands only in 3 different types,</div>
+    <div class="content">1. Number,</div>
+    <div class="content">2. String,</div>
+    <div class="content m-b-10">3. Boolean.</div>
+    <!-- //highlighter-heading -->
+    <div class="special-title-header m-b-5">There are two different types of Coercion is there,</div>
+    <div class="content m-b-5">1. Explicit - Intentionally using any one of these methods: Number(), Boolean() and String().</div>
+    <div class="content m-b-15">2. Implicit - By Default.</div>
+
+    <div class="sub-heading">Double Equals '==' vs Triple Equals '==='</div>
+    <div class="content">Usually for the comparison we tend to use any of these operators. Double equals (==) test for loose equality and perform type coercion implicitly. In most cases == triggers the implicit numeric type conversion but if both operands are string then it don’t trigger the numeric conversion. </div>
+    <div class="content m-b-15">But in case of triple equals (===) without doing type coercion, strictly check type also with the value of the operands on both the side. </div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+3 == "3" //true
+    </textarea>
+    <div class="content">so here == operator triggers the implicit numeric type conversion on ‘3’. Hence 3 == 3 so the result is true.</div>
+    </div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+3 === ‘3’ //false
+    </textarea>
+        <div class="content">But in the case of === don’t trigger any implicit type conversion so it will be false as both have different value types.</div>
+    </div> 
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+false == 0 // true
+    </textarea>
+        <div class="content">same goes here implicit numeric type conversion of false ( Number(false) ) will be output as 0. Hence 0 == 0 will be true.</div>
+    </div> 
+    <div class="code-snippet m-b-20">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+false === 0 //false
+    </textarea>
+        <div class="content">But here same like above case automatically the result will be false.</div>
+    </div> 
+
+
+
+    <div class="sub-heading">Addition '+' vs subtraction '-'</div>
+    <div class="content m-b-5">'+' operator checks if any one operand is type String then it will implicitly type coerce other operand also into String,</div>
+    <div class="code-snippet m-b-15">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+33 + "3"      //  "333"
+    </textarea>
+        <div class="content">Here one of the operand is "3" String value so the operand number converted into String "33" and concatenated with "3" </div>
+        <div class="content">Hence the result will be "333"</div>
+    </div> 
+
+    <div class="content">'-' (minus) operator will always perform numeric type conversion.</div>
+    <div class="code-snippet m-b-15">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+33 - "3"    // 30 
+    </textarea>
+        <div class="content">Here "3" converted into number 3 and subtracted with 33 hence the result is 30.</div>
+    </div> 
+
+    <div class="sub-heading">Implicit Type Coercion on the Objects </div>
+    <div class="content">Here Type conversion implicitly call the default methods Object.prototype</div>
+    <ul class="m-b-10">
+        <li>valueOf()</li>
+        <li>toString()</li>
+    </ul>
+    <div class="special-title-header">The order of calling these methods will differ based on the type conversion. </div>
+    <div class="content">If it is Numeric type conversion then order will be, </div>  
+    <ol class="m-b-5">
+        <li class="content">Calls the <span class="highlighter-heading">valueOf()</span> method if the result is primitive then return or else fallback to next method</li>
+        <li class="content">Calls the <span class="highlighter-heading">toString()</span> method</li>
+    </ol>  
+    <div class="content m-b-15">But in the case of String type conversion it will be reverse order.</div>
+
+    <div class="special-title-header">In case of Objects comparisons,  </div>
+    <div class="content">if both the operands are object type then it checks for object identity instead of object equality. </div>
+    <div class="code-snippet m-b-15">
+    <textarea disabled="true" class="code-wrapper" rows="3">
+{} == {} //false
+
+[ ] == [ ] //false
+    </textarea>
+        <div class="content">because both are different instances of the object.</div>
+    </div> 
+    <div class="content">Any one of the operand is different,</div>
+    <div class="code-snippet m-b-5">
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[1] == "1" //true
+    </textarea>
+    <div class="content">Incase of different operands double equals '==' will do implicit numeric type conversion so it will start convert [ 1 ]. </div>
+    <div class="content m-b-5">Hence it is an object then type conversion will happen using valueOf() and toString() methods. As it is a numeric type conversion so first valueOf() method get called on [ 1 ]. So,</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[1].valueOf()  // [1] 
+    </textarea>
+    <div class="content m-b-5">here it will give you array again (i.e. [1]). so it fallbacks to toString() method.</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[1].toString() // "1"
+    </textarea>
+    <div class="content">and it will return "1". Hence "1" equals to "1" and result will be true.</div>
+    </div>
+
+    <div class="special-title-header">Incase of object additions or subtraction,</div>
+    <div class="code-snippet m-b-15">
+    <div>In Addition,</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[1,2,3] + [4,5,6] // ‘1,2,34,5,6’
+    </textarea>
+    <div class="content">Here neither of the operands are String so + will apply the numeric type conversion on both the operands. 
+            So based on numeric type conversion order for the objects,</div>
+
+<textarea disabled="true" class="code-wrapper" rows="1">
+[1,2,3].valueOf() // [1,2,3] 
+    </textarea>
+    <div class="content">Not primitive so fallback to next method,</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[1,2,3].toString() // "1,2,3"
+    </textarea>                 
+    <div class="content">Same goes for second operand hence that also converted as,</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[4,5,6].valueOf().toString()  //"4,5,6"
+    </textarea>          
+    <div class="content">Hence final result is,</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+"1,2,3" + "4,5,6" //"1,2,34,5,6"
+    </textarea>                 
+    </div> 
+    <div>
+    <div class="code-snippet m-b-5">
+    <div>In Subtraction,</div>
+    <textarea disabled="true" class="code-wrapper" rows="1">
+[4,5,6] - [1,2,3] // NaN
+    </textarea>
+    <div class="content">Here because [4,5,6].valueOf().toString() will give you "4,5,6" and [1.2.3].valueOf().toString() will give you "1.2.3". </div>
+    <div class="content">Hence "4,5,6" - "1,2,3" will give you NaN. </div>
+    </div>
+
+    <div class="sub-heading">Conclusion</div>
+    <div class="content">Hence these many things are happenings under the hood of javascript engine when we do comparison or any other arithmetic operations like above. So we have to understand what’s happening inside before doing those things. Most safer side is to include ‘use strict’ mode in your javascript code base or use triple equals ‘===‘ for the comparisons. 
+ </div>
+
+    <div class="m-b-40 m-t-40"> Thanks and Welcome back !!!</div>
+</div>
