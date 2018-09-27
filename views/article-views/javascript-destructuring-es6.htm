@@ -1,0 +1,139 @@
+<div class="article-wrapper">
+    <div class="article-heading">Learn new ES6 feature Destructuring on Objects and Arrays.</div>
+    <div class="sub-heading">In Simple Objects</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">
+
+    var employee = {name: 'Alexander', age: 26};
+
+    const{name, age} = employee;
+    
+    console.log(name, age); // Alexander 26
+
+    </textarea>
+    </div>        
+    <div class="sub-heading">In Complex Objects</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">
+
+    var employee = {name: 'Alexander', age: 26, education: {school: 'GHS', clg: 'VIT'}};
+
+    const {name, age, education: {school, clg}} = employee;
+    
+    console.log(name, age, school, clg); // Alexander 26 GHS VIT
+
+    </textarea>
+    </div>  
+
+    <div class="sub-heading">Renaming the variables while Destructuring</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">   
+    var employee = {name: 'Alexander', age: 26, education: {school: 'GHS', clg: 'VIT'}};
+
+    const {name, age, education: {school: schoolName, clg: clgName}} = employee;
+
+    console.log(name, age, schoolName, clgName); // Alexander 26 GHS VIT
+
+    </textarea>
+    </div>
+
+    <div class="sub-heading">Array Destructuring</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">   
+    var arr = ['value1', 'value2', 'value3'];
+
+    const [firstValue, secondValue, thirdValue] = arr;
+    
+    console.log(firstValue, secondValue, thirdValue); //value1, value2, value3
+
+    </textarea>
+    </div>
+
+    <div class="sub-heading">Using Rest parameter get remaining all array values</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">  
+    var arr = ['value1', 'value2', 'value3'];
+
+    const [firstvalue, ...restAllValue] = arr;
+    
+    console.log(restAllValue); //value2, value3 
+
+    </textarea>
+    </div>
+
+    <div class="sub-heading">Only third value from the array</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">  
+    var arr = ['value1', 'value2', 'value3'];
+
+    const [ , , thirdValue] = arr;
+    
+    console.log(thirdValue); // value3
+
+    </textarea>
+    </div>
+
+    <div class="sub-heading">Destructuring won't work on values that are not object, array or iterable</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="6">  
+    let {val} = null;
+    //Uncaught TypeError: Cannot destructure property ‘val' of 'undefined' or 'null’.
+    
+    hint: So you will get nice juicy error like this. 
+
+    </textarea>
+    </div>
+
+    <div class="sub-heading m-t-30">Default Values</div>
+    <div class="special-title-header">On Simple Objects,</div>
+    <div class="m-b-5 code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">  
+    var employee = {name: 'Alexander', age: 26};
+
+    let {name, age, experience = 'Nil' } = employee;
+    
+    console.log(name, age, experience); //Alexander 26 Nil
+
+    </textarea>
+    </div>
+
+    <div class="special-title-header">On Complex Objects,</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">  
+    var employee = {name: 'Alexander', age: 26, education: {clg: 'VIT'}};
+
+    let {name, age, education:{school='not-mentioned', clg = ‘not-mentioned'} } = employee;
+    
+    console.log(name, age, school, clg); // Alexander 26 not-mentioned VIT
+            
+    </textarea>
+    </div>
+
+    <div class="sub-heading m-t-30">Array of Objects</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="9">  
+    var employees = [{name: 'Alexander', age: 26}, {name: 'John', age: 24}];
+
+    let [{name:emp1name, age:emp1age},{name:emp2name, age:emp2age}] = employees;
+
+    console.log(emp1name, emp1age); // Alexander 26
+
+    console.log(emp2name, emp2age); // John 24
+
+    </textarea>
+    </div>
+
+    <div class="sub-heading">Object contains Array</div>
+    <div class="code-snippet">
+    <textarea disabled="true" class="code-wrapper" rows="7">  
+    var employee = {name: 'Alexander', age: 26, childrenName: ['arun', 'ashok', 'rahul']};
+
+    let {name, age, childrenName:[firstchild, ...restChildren]} = employee;
+    
+    console.log(firstchild); //arun
+
+    </textarea>
+    </div>
+
+    <div class="m-b-40 m-t-40"> Thanks and Welcome back !!!</div>
+</div>

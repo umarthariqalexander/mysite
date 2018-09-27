@@ -25,7 +25,7 @@
                 we contains most of our application logics.</div>
         </div>
     </div>
-    <div class="content">
+    <div class="content m-t-30">
         <div class="m-b-5">So in this article, we are going to cover basic pillars of AngularJS,</div>
         <ul>
             <li>Directives</li>
@@ -36,7 +36,7 @@
             <li>Services</li>
         </ul>
     </div>
-    <div class="sub-heading">Directives</div>
+    <div class="sub-heading m-t-30">Directives</div>
     <div class="content m-b-5">
         Directives are most powerful components of AngularJS, Which helps to improve your HTML tags functionalities by adding markers
         on it.
@@ -53,14 +53,14 @@
         Angular’s default directives has “ng-“ as a prefix. This refers to namespace of angular it helps to differentiate between
         your own directives and default ones.
     </div>
-    <div class="m-b-10">
+    <div class="m-b-30">
         <div class="">Angular has plenty of useful default directives but we going to see only most useful directives of angular.</div>
         <div class="m-b-10">For more directives please refer this link:
             <a style="text-decoration: underline; text-decoration-color: blue;" href="//docs.angularjs.org/api/ng/directive"
                 target="_blank">Angular Directives</a>
         </div>
-        <div>Most useful default directives, </div>
     </div>
+    <div>Most useful default directives, </div>
     <div class="code-snippet">
         <div class="special-title-header">ng-app</div>
         <div class="content">If you include ng-app directive in any of your html tag then that denotes, this tag contains an angular application.
@@ -82,7 +82,7 @@
         </div>
     </div>
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">AngularJS Expression</div>
         <div class="content m-b-5">AngularJS expressions should be written inside double open and close curly braces. </div>
         <textarea disabled="true" class="code-wrapper" rows="3">
@@ -91,7 +91,7 @@
     </div>
         </textarea>
     </div>
-    <div class="code-snippet m-b-5">
+    <div class="code-snippet m-b-30">
         <div class="special-title-header">ng-init</div>
         <div class="m-b-5 content">If you want initialize variables in view templates, then we can utilize the ng-init directive for that.</div>
         <div class="code-snippet">
@@ -114,7 +114,7 @@
             <div>100 1 123</div>
         </div>
     </div>
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">Module</div>
         <div class="content m-b-5">An AngularJS module defines an application.</div>
         <textarea disabled="true" class="code-wrapper" rows="1">
@@ -130,7 +130,7 @@ app.controller( "myCtrl", function( $scope ) {
         </textarea>
     </div>
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">ng-controller</div>
         <div class="content">It is used to define controllers in view (HTML) part. </div>
         <div class="content m-b-5">Hence if you declare any tag with 
@@ -160,7 +160,7 @@ app.controller( "myCtrl", function( $scope ) {
     </div>
 
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">ng-bind</div>
         <div class="content">It is used to bind your controller variable values with your view tags.</div>
         <div class="content m-b-5">It only can bind the values from controller. Hence it is only doing one way data binding.</div>
@@ -189,7 +189,7 @@ app.controller( "myCtrl", function( $scope ) {
     </div>
 
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">ng-model</div>
         <div class="content">It will bind the controller variable values with view part as well as bind the view part values with controller variables, </div>
         <div class="content m-b-5">Hence it is doing Two way data binding. And it only works with input tags. i.e. input, textarea, select etc.</div>
@@ -214,7 +214,7 @@ app.controller( "myCtrl", function( $scope ) {
          </textarea>
     </div>
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">ng-repeat</div>
         <div class="content m-b-5">It is used to iterate the array values and clone the html elements to display those values.</div>
         <textarea disabled="true" class="code-wrapper" rows="18">
@@ -247,7 +247,7 @@ app.controller( "myCtrl", function( $scope ) {
         </div>
     </div>
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">ng-class</div>
         <div class="m-b-5 content">It is used to apply the classes for html tags based on conditions.</div>
         <textarea disabled="true" class="code-wrapper" rows="21">
@@ -279,7 +279,7 @@ app.controller( "myCtrl", function( $scope ) {
         </div>
     </div>
 
-    <div class="code-snippet">
+    <div class="code-snippet m-t-30">
         <div class="special-title-header">Custom Directives</div>
         <div class="content">Some times we need to repeat the same code again and again for achieve the same functionality in multiple places. </div>
         <div class="m-b-5">Instead we can create a custom directives and put the repeating code to achieve the reusability.</div>
@@ -308,7 +308,7 @@ app.controller( "myCtrl", function( $scope ) {
             <h1>I am own directive</h1>
         </div>
     </div>
-    <div class="m-t-10 content">
+    <div class="content m-t-30">
         Different ways to invoke the custom directives,
     </div>
     <ul>
@@ -333,14 +333,14 @@ app.controller( "myCtrl", function( $scope ) {
 
     <div class="special-title-header">AngularJS services are,</div>
     <div><span class="highlighter-heading">Singletons:</span> <span class="content">Create a single instance of your service across the application.</span></div>
-    <div class="m-b-20"><span class="highlighter-heading">Lazily instantiated:</span> <span class="content">Create a instance, whenever any component requires it.</span></div>
+    <div class="m-b-30"><span class="highlighter-heading">Lazily instantiated:</span> <span class="content">Create a instance, whenever any component requires it.</span></div>
     <div class="content">Angular has 30 built in services, some of them are $filter, $http, $log, $window, $rootScope.</div>
     <div class="code-snippet">
     <div class="special-title-header">$filter - Service:</div>
     <div class="content m-b-5">AngularJS provides filter service to transform data. We can use $filter service in View Templates or in Controller.</div>
     <div class="special-title-header">$filter - In View Templates,</div>
     <div class="content m-b-5">In Templates we use pipe '|' symbol to apply any filters</div>
-    <textarea disabled="true" class="code-wrapper" rows="19">
+    <textarea disabled="true" class="code-wrapper m-t-10" rows="19">
 <html> 
     <head> 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> 
@@ -362,7 +362,7 @@ app.controller( "myCtrl", function( $scope ) {
 </html>
     </textarea>
         </div>
-<div class="code-snippet">
+<div class="code-snippet m-t-30">
     <div class="special-title-header m-b-5">
             $filter - In Controller,
         </div>
@@ -388,7 +388,7 @@ app.controller( "myCtrl", function( $scope ) {
     </textarea>
 </div>
 
-<div class="code-snippet">
+<div class="code-snippet m-t-30">
     <div class="special-title-header m-b-5">
             $http - Service:
     </div>
@@ -419,7 +419,7 @@ app.controller( "myCtrl", function( $scope ) {
 </html>
     </textarea>
 </div>
-<div class="sub-heading">Custom Services,</div>
+<div class="sub-heading m-t-30">Custom Services,</div>
 <div class="special-title-header">Ways to create a custom service,</div>
 <ul>
     <li class="content">Using Service method - It will return the service instance.</li>

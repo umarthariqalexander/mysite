@@ -9,7 +9,7 @@
         <div ng-if="article.banner_title" class="image-wrapper" ng-class="{'default-banner-wrapper': !article.banner_img}">
             <div class="default-img-banner">
                 <div class="default-banner-title" ng-bind="article.banner_title"></div>
-                <div class="js">JS</div>    
+                <div class="js" ng-bind="article.key || 'JS'">JS</div>    
             </div>
         </div>
         <div class="article-title">

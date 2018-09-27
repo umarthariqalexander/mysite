@@ -26,6 +26,14 @@ let articles = [{
         banner_title: 'Singleton',
         desc: 'Understand the singleton pattern in Javascript'
     }, {
+        id: 8,
+        title: 'Destructuring - ES6',
+        linkTitle: 'javascript-destructuring-es6',
+        banner_img: '',
+        key: 'ES6',
+        banner_title: 'Destructuring',
+        desc: 'Learn destructuring of objects and arrays using ES6 new features'
+    }, {
         id: 3,
         title: 'Find an element in Array',
         linkTitle: 'javascript-find-element-in-array',
@@ -37,6 +45,7 @@ let articles = [{
         title: 'Set in Javascript',
         linkTitle: 'javascript-set',
         banner_img: '',
+        key: 'ES6',
         banner_title: 'Set',
         desc: 'Learn new ES6 Data structure Set'
     }, {
