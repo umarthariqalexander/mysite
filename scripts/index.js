@@ -5,7 +5,8 @@ import mainCtrl from './mainController.js';
 let app = angular.module('myApp', ['ngRoute']);
 app.controller('mainCtrl', ['$scope', '$location', '$http', mainCtrl]);
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
   $routeProvider
   .when('/', {
     templateUrl: './views/articles.htm'
