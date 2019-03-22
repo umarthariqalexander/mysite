@@ -28,6 +28,14 @@ export default ($scope, $location, $http)=>{
     $scope.projectList = data.projectList;
     $scope.articlesList = articles;
     $scope.contactFormSubmitted = false;
+    let defaultSiteTitle = 'Umar Thariq - Front-end developer, Bangalore';
+    $scope.siteTitle = 'Umar Thariq - Front-end developer, Bangalore';
+    let directEntrySetSiteTitle = $location.path().split('/')[$location.path().split('/').length - 1];
+    function capitalize(value) {
+        if(value) {return value.charAt(0).toUpperCase() + value.slice(1);}
+        return null;
+    }
+    $scope.siteTitle = directEntrySetSiteTitle ? capitalize(directEntrySetSiteTitle) : $scope.siteTitle;
     let initializeContactFormValues = ()=>{
         $scope.contactForm = {
             firstName: '',
@@ -65,6 +73,8 @@ export default ($scope, $location, $http)=>{
     $scope.onChangeTab = (path)=>{
         $location.url(path);
         $scope.currentActiveTab = $location.path();
+        let directEntrySetSiteTitle = ($location.path().split('/')[$location.path().split('/').length - 1]);
+        $scope.siteTitle = directEntrySetSiteTitle ? capitalize(directEntrySetSiteTitle) : defaultSiteTitle;
         $scope.viewArticle = (() => {return $location.path().split('/').indexOf('article') > -1;})();
         $scope.hideShowMenu();
         if(window.screen.height < 767) {
@@ -75,6 +85,7 @@ export default ($scope, $location, $http)=>{
         if(imageName) {return $scope.images[imageName];}
     };
     $scope.navigateToArticle = function(articleId, articleTitle) {
+        $scope.siteTitle = capitalize(articleTitle);
         $location.url('/article/' + articleTitle);
     };
     var animateScrollDown = function() {

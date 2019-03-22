@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp" ng-controller="mainCtrl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <base href="/" />
-    <title>Umar Thariq - Front-end developer, Bangalore</title>
+    <title ng-bind="siteTitle"></title>
     <meta name="title" content="">
     <meta name="description" content="Personal Website about umarthariq who is passionate on Web development. Umar is from Dindigul, Tamilnadu. Umar Thariq finished M.Tech Software Engineering in VIT University. Currently Umar Thariq working as a Front-end Developer in Bangalore">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="./bundle.css"/>
   </head>
   <body>
-    <div ng-app="myApp" ng-controller="mainCtrl" class="main-cover row">
+    <div class="main-cover row">
         <img ng-src="{{images.ut}}" style="display: none;"/>
         <div ng-click="hideShowMenu()" class="hamburger-menu-cover">
           <span class="icon-menu"></span>
