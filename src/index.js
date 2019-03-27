@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactLogo from './images/logo.svg';
-import './styles/index.css';
+import './styles/index.scss';
 
 class Welcome extends React.Component{
     constructor(props){
