@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactLogo from './images/logo.svg';
 import './styles/index.scss';
+import MainContainer from './Containers/MainContainer';
 
 class Welcome extends React.Component{
     constructor(props){
@@ -13,10 +14,7 @@ class Welcome extends React.Component{
     render(){
         return(
         <div className="App"> 
-            <header className="App-header">
-            <img className="App-logo" src={ReactLogo}/>
-            <p> Hey there, {this.state.message}</p>
-            </header>
+            <MainContainer/>
         </div>);
     }
 }

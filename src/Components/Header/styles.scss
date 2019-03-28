@@ -1,0 +1,14 @@
+.header-wrapper{
+    border: 2px solid #EEE;
+    padding: 0px 100px;
+    background-color: #FFFFFF;
+    display: flex;
+    .each-header{
+        width: 25%;
+        padding: 20px 30px;
+        font-family: 'Roboto-thin';
+        cursor: pointer;
+    }
+}
+
+
