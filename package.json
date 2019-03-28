@@ -2,7 +2,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "react-router-dom": "^5.0.0"
   },
   "name": "react-prototype",
   "version": "1.0.0",

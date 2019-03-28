@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import ReactLogo from './images/logo.svg';
 import './styles/index.scss';
 import MainContainer from './Containers/MainContainer';
@@ -14,7 +15,9 @@ class Welcome extends React.Component{
     render(){
         return(
         <div className="App"> 
-            <MainContainer/>
+            <BrowserRouter>
+                <MainContainer/>
+            </BrowserRouter>
         </div>);
     }
 }

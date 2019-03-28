@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Routes from '../routes';
 import {Header} from '../Components';
 import '../styles/MainContainer.scss';
 
@@ -13,6 +14,7 @@ export default class MainContainer extends Component {
         return (
         <div className="main-app-wrapper">
             <Header pageHeaders={this.state.pageHeaders}/>
+            <Routes />
         </div>
         )
     }
