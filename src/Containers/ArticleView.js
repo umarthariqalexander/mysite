@@ -1,6 +1,5 @@
 import React, { Component, lazy, Suspense} from 'react';
 import {withRouter} from 'react-router';
-import {Route} from 'react-router-dom';
 import '../styles/ArticleView.scss';
 
 class ArticleView extends Component {

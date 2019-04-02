@@ -2,5 +2,28 @@
     padding-top: 70px;
     .article-wrapper{
         margin: 30px 100px;
+        padding: 0px 30px;
+        text-align: left;
+        .article-main-heading{
+            font-family: 'Open-Sans-Semi-Bold';
+            text-align: center;
+        }
+        .article-sub-heading{
+            font-family: 'Open-Sans-Semi-Bold';
+            margin-bottom: 10px !important;
+        }
+        .article-content{
+            font-family: 'Open-Sans-Regular';
+            letter-spacing: 0.2px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        .code-snippet{
+            font-family: 'Consolas';
+            font-size: 18px;
+            pre{
+                background-color: #f2f2f2;
+            }
+        }
     }
 }
