@@ -2,6 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: './src/index.js',
+    devtool: 'inline-source-map',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -29,7 +30,8 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.resolve(__dirname, "dist")
+        contentBase: path.resolve(__dirname, "dist"),
+        historyApiFallback: true
     }
 };
 

@@ -7,7 +7,7 @@ export default class MainContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            pageHeaders: ['ARTICLES', 'PROJECTS', 'ABOUT ME', 'CONTACT']
+            pageHeaders: [{heading: 'ARTICLES', navLink: '/'},{heading: 'PROJECTS', navLink: '/projects'}, {heading: 'ABOUT ME', navLink: '/about'}, {heading: 'CONTACT', navLink: '/contact'}]
         };      
     }
     render() {

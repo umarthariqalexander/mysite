@@ -1,3 +1,21 @@
+@mixin plainLink(){
+    a:link{
+        text-decoration: none;
+    }
+    a:visited{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    a:active{
+        text-decoration: none;
+    }
+    a{
+        color: inherit
+    }
+}
+
 .header-wrapper{
     border: 2px solid #EEE;
     background-color: #FFFFFF;
@@ -6,6 +24,7 @@
     .each-header-wrapper{
         display: flex;
         padding: 0px 100px;
+        @include plainLink();
         .each-header{
             width: 22%;
             padding: 20px 30px;
@@ -17,5 +36,4 @@
         }
     }
 }
-
 
