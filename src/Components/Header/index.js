@@ -4,13 +4,15 @@ import './styles.scss';
 const Header = ({pageHeaders})=>{
     return(
         <header className="header-wrapper">
-            {pageHeaders.map((header, index)=>{
-                return(
-                        <div className="each-header" key={header+index}>
-                            <span>{header}</span>
-                        </div>
-                );
-            })}
+            <div className="each-header-wrapper">
+                {pageHeaders.map((header, index)=>{
+                    return(
+                            <div className="each-header" key={header+index}>
+                                <span className="header">{header}</span>
+                            </div>
+                    );
+                })}
+            </div>
         </header>
     );
 }

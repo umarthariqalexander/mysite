@@ -1,13 +1,20 @@
 .header-wrapper{
     border: 2px solid #EEE;
-    padding: 0px 100px;
     background-color: #FFFFFF;
-    display: flex;
-    .each-header{
-        width: 25%;
-        padding: 20px 30px;
-        font-family: 'Consolas';
-        cursor: pointer;
+    position: fixed;
+    width: 100%;
+    .each-header-wrapper{
+        display: flex;
+        padding: 0px 100px;
+        .each-header{
+            width: 22%;
+            padding: 20px 30px;
+            font-family: 'Consolas';
+            .header{
+                cursor: pointer;
+                padding: 30px;
+            }
+        }
     }
 }
 
