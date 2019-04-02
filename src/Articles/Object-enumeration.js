@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainHeading, SubHeading, Content } from '../Components/ArticleView';
+import { MainHeading, SubHeading, Content, CodeSnippet } from '../Components/ArticleView';
 
 export default function ObjectEnumeration() {
   return (
@@ -10,20 +10,37 @@ export default function ObjectEnumeration() {
             Unlike Array's for loop or map/forEach methods, Objects don't have any direct methods to enumerate the
             object properties. And moreover object properties hold different values for keys.
         </Content>
+        <div className="paragraph-break"></div>
         <SubHeading>ES5 - (Object.entries and forEach)</SubHeading>
-        <div>
-          <code className="code-snippet">
-            <pre>
-             {`
+        <CodeSnippet>  {`
   var obj = {a: 'apple', b: 'ball', 'c': 'cat'};
 
   Object.keys(obj).forEach((item)=>{
-    console.log(obj[item]);    // apple, ball, cat
+    console.log(obj[item]);                           // apple, ball, cat
   });
-             `}
-            </pre>
-          </code>
-        </div>
+  `}
+        </CodeSnippet>
+        <div className="paragraph-break"></div>
+        <SubHeading>ES6 - for of() method</SubHeading>
+        <CodeSnippet>  {`
+  var obj = {a: 'apple', b: 'ball', 'c': 'cat'};
+
+  for(let key of Object.keys(obj)){
+      console.log(obj[key]);                          // apple, ball, car
+  }
+  `}
+        </CodeSnippet>
+        <div className="paragraph-break"></div>
+        <SubHeading>ECMA 2017 - Object.entries() method</SubHeading>
+        <CodeSnippet>  {`
+  var obj = {a: 'apple', b: 'ball', 'c': 'cat'};
+
+  Object.entries(obj).forEach(([key, value])=>{
+      console.log(key); console.log(value);           // a apple, b ball, c cat
+  });
+  `}
+        </CodeSnippet>
+        <div className="paragraph-break"></div>
     </div>
   )
 }
