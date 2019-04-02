@@ -10,17 +10,16 @@ class Articles extends Component {
         this.state = {
             articles: ariclesList
         }
-        this.navigateToArticle = this.navigateToArticle.bind(this);
     }
-    navigateToArticle(){
-        this.props.history.push('/article');
+    navigateToArticle(articleUrl){
+        this.props.history.push({pathname: `/article/${articleUrl}`, state: {articleUrl}});
     }
     render() {
         const {articles} = this.state;
         return (
         <div className="articles-wrapper">
             {articles.map((article, index)=>{
-                return(<ArticleTile key={index} article={article} onClick={this.navigateToArticle} index={index}/>);
+                return(<ArticleTile key={index} article={article} onClick={this.navigateToArticle.bind(this, article.articleUrl)} index={index}/>);
             })} 
         </div>
         )
