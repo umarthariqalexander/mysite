@@ -12,6 +12,12 @@
             font-family: 'Open-Sans-Semi-Bold';
             margin-bottom: 10px !important;
         }
+        .small-sub-heading{
+            font-family: 'Open-Sans-Regular';
+            letter-spacing: 0.2px;
+            font-size: 18px;
+            line-height: 10px;
+        }
         .article-content{
             font-family: 'Open-Sans-Regular';
             letter-spacing: 0.2px;
@@ -27,6 +33,25 @@
         }
         .paragraph-break{
             margin: 50px;
+        }
+        .article-ordered-list{
+            font-family: 'Open-sans-regular';
+            font-size: 18px;
+            font-weight: 300;
+            li{
+                line-height: 30px;
+            }
+        }
+        .article-unordered-list{
+            font-family: 'Open-sans-regular';
+            font-size: 18px;
+            font-weight: 300;
+            li{
+                line-height: 30px;
+            }
+        }
+        .article-end{
+            height: 100px;
         }
     }
 }

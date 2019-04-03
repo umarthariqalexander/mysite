@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainHeading, SubHeading, Content, CodeSnippet } from '../Components/ArticleView';
+import { MainHeading, SubHeading, Content, CodeSnippet, ArticleEnd } from '../Components/ArticleView';
 
 export default function ObjectEnumeration() {
   return (
@@ -40,7 +40,7 @@ export default function ObjectEnumeration() {
   });
   `}
         </CodeSnippet>
-        <div className="paragraph-break"></div>
+    <ArticleEnd/>
     </div>
   )
 }
