@@ -15,9 +15,9 @@ export default [
         articleUrl: 'Coercion-in-javascript-II'
     },
     {
-        heading: 'React Hooks explained with relevant examples', 
-        bannerImg:'React_Hooks.png',
-        articleUrl: 'Object-enumeration'
+        heading: 'Singleton pattern in Javascript', 
+        bannerImg:'Default_JS.jpg',
+        articleUrl: 'Singleton-pattern-in-javascript'
     },
     {
         heading: 'React Hooks explained with relevant examples', 
