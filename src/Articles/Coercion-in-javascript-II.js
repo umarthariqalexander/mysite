@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { MainHeading, SubHeading, SmallSubHeading, Content, CodeSnippet, ArticleUnOrderedList,ArticleOrderedList, ArticleEnd } from '../Components/ArticleView';
 
 export default () => {
@@ -6,7 +7,7 @@ export default () => {
     <div>
       <MainHeading>Learn Corecion in Javascript - II</MainHeading>
       <SubHeading>Introduction</SubHeading>
-      <Content>In this article, We going to learn how type coercion is working on Object types of Javascript. This one is the continuation of the part-I, where we learnt how type coercion is working on Addition and Subtraction operators. </Content>
+      <Content>In this article, We going to learn how type coercion is working on Object types of Javascript. This article is the continuation of the <Link to={{pathname: "/article/Coercion-in-javascript-I", state: {articleUrl:'Coercion-in-javascript-I'}}}>part-I</Link>, where we learnt how type coercion is working on normal comparisons, Addition and Subtraction operations. </Content>
       <div className="paragraph-break"></div>
       <SubHeading>Implicit Type Coercion on the Objects</SubHeading>
       <div className="m-20"></div>
@@ -31,8 +32,8 @@ export default () => {
         </ArticleOrderedList>
         <SmallSubHeading>But in the case of String type conversion it will be reverse order.</SmallSubHeading>
         <div className="paragraph-break"></div>
-        <SubHeading>Object comparisions</SubHeading>
-        <Content>if both the operands are object type then it checks for object identity instead of object equality.</Content>
+        <SubHeading>Object comparison</SubHeading>
+        <Content>If both the operands are object type then it checks for object identity instead of object equality.</Content>
         <CodeSnippet>
         {`    
     {} == {}    //false
@@ -41,6 +42,62 @@ export default () => {
         `}
         </CodeSnippet>
         <Content>Because both of them are different instances of the object.</Content>
+        <div className="m-30"></div>
+        <Content>If one of the operands is different type rather than object type,</Content>
+        <CodeSnippet>
+        {`    
+    [1] == "1" //true
+        `}
+        </CodeSnippet>
+        <SmallSubHeading>LHS is Object type so will follow numeric type conversion order on this as mentioned above,</SmallSubHeading>
+        <CodeSnippet>
+        {`    
+    [1].valueOf().toString()  // "1"
+        `}
+        </CodeSnippet>
+        <SmallSubHeading>Hence,</SmallSubHeading>
+        <CodeSnippet>
+        {`    
+    "1" == "1" //true
+        `}
+        </CodeSnippet>
+        <div className="paragraph-break"></div>
+        <SubHeading>Object Addition / Subtraction</SubHeading>
+        <CodeSnippet>
+        {`    
+    [1,2,3] + [4,5,6] // "1,2,34,5,6"
+        `}
+    </CodeSnippet>
+    <Content>
+    Here neither of the operands are String, So <b>+</b> will apply the numeric type conversion on both the operands. 
+    </Content>
+    <CodeSnippet>
+        {`    
+    [1,2,3].valueOf().toString() // "1,2,3"
+
+    [4,5,6].valueOf().toString() // "4,5,6"
+    
+    "1,2,3" + "4,5,6"            // "1,2,34,5,6"
+        `}
+    </CodeSnippet>
+    <Content>In Subtraction same like above,</Content>
+    <CodeSnippet>
+        {`    
+    [1,2,3] - [4,5,6]
+
+    [1,2,3].valueOf().toString() // "1,2,3"
+
+    [4,5,6].valueOf().toString() // "4,5,6"
+    
+    "1,2,3" - "4,5,6"            // NaN
+        `}
+    </CodeSnippet>
+    <div className="paragraph-break"></div>
+    <SubHeading>Conclusion</SubHeading>
+    <Content>
+    Hence these many things are happening under the hood of Javascript engine when we do the comparison or any other arithmetic operations like above. So we have to understand what’s happening inside before doing those things. The most safer side is to include 'use strict' mode in your javascript code base or use triple equals '===' for the comparisons.
+    </Content>
+        <ArticleEnd/>
     </div>
   )
 }

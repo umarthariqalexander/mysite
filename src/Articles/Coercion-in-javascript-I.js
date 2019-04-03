@@ -88,7 +88,7 @@ export default ()=>{
     <div className="paragraph-break"></div>
     <SubHeading>Conclusion</SubHeading>
     <Content>
-    We get the knowledge of how type coercions are happening implicitly when we use addition and subtraction operators. We will learn more about how type coercions are happening on Objects in the next part of this article.
+    We get the knowledge of how type coercions are happening implicitly when we do normal comparisons, addition and subtraction operations. We will learn more about how type coercions are happening on Objects in the next part of this article.
     </Content>
     <ArticleEnd/>
     </div>
