@@ -8,7 +8,7 @@ export default function ObjectEnumeration() {
         <SubHeading>Introduction</SubHeading>
         <Content>
             Unlike Array's for loop or map/forEach methods, Objects don't have any direct methods to enumerate the
-            object properties. And moreover object properties hold different values for keys.
+            object properties. And moreover, Object properties hold different values for keys.
         </Content>
         <div className="paragraph-break"></div>
         <SubHeading>ES5 - (Object.entries and forEach)</SubHeading>
