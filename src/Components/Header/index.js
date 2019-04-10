@@ -8,7 +8,7 @@ const Header = ({pageHeaders})=>{
             <div className="each-header-wrapper">
                 {pageHeaders.map((header, index)=>{
                     return(
-                            <div className="each-header" key={header.heading+index}>
+                            <div className={"each-header "+(header.active ? 'active': '')} key={header.heading+index}>
                                 <Link to={header.navLink}>
                                     <span className="header">{header.heading}</span>
                                 </Link>
